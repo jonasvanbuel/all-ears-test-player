@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+body {
+  background-color: rgba(0,0,0,0.08);
+  margin: 0;
+  padding: 0;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#body-container {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header {
+  background-color: white;
+
+  width: 100%;
+  height: 140px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root {
+  background-color: yellow;
+
+  width: 100%;
+  flex-grow: 1;
 }
+
+footer {
+  background-color: white;
+
+  width: 100%;
+  height: 60px;
+}
+
+// RESPONSIVE TEMPLATE
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  #body-container {
+    // height: 823px;
+    max-height: 823px;
+    // width: 411px;
+    max-width: 411px;
+
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }
