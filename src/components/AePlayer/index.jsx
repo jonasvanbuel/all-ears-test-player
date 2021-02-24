@@ -5,7 +5,7 @@ import './index.scss';
 function AePlayer() {
   return (
     <div id="ae-player">
-
+      ae-player
     </div>
   );
 }
