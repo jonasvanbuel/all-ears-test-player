@@ -41,7 +41,8 @@ footer {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   #body-container {
-    max-height: 823px;
+    height: 823px;
+    max-height: 90vh;
     max-width: 411px;
   }
 
