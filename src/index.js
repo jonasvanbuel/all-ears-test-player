@@ -3,13 +3,13 @@ import 'react-app-polyfill/ie9';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 
-import AePlayer from './components/AePlayer';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AePlayer />
+    <App />
   </React.StrictMode>,
   document.getElementById('root-ae-player')
 );
+
