@@ -5,18 +5,21 @@ import { PlayerContext } from '../../context/PlayerContext'
 
 // Subcomponents
 import Chapter from './subComponents/Chapter';
+import { ChapterProvider } from '../context/ChapterContext';
 
-const AePlayer = () => {
+const Player = () => {
   const { player } = useContext(PlayerContext);
   const { chapters } = player;
 
   return (
-    <div id="ae-player">
+    <div id="player">
       {chapters.map((chapter) => (
-        <Chapter key={chapter.count} chapter={chapter} />
+        <ChapterProvider key={chapter.count}>
+          <Chapter key={chapter.count} chapter={chapter} />
+        </ChapterProvider>
       ))}
     </div>
   );
 }
 
-export default AePlayer;
+export default Player;

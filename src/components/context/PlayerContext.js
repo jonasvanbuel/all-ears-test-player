@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const dataFeed = {
+const data = {
   exhibition: {
     id: 1,
     mainTitle: 'Olafur Eliasson',
@@ -36,7 +36,7 @@ const dataFeed = {
 export const PlayerContext = React.createContext();
 
 export const PlayerProvider = (props) => {
-  const [ player, setPlayer ] = useState(dataFeed);
+  const [ player, setPlayer ] = useState(data);
 
   return (
     <PlayerContext.Provider value={{ player, setPlayer }}>

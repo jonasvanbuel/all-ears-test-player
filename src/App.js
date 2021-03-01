@@ -3,12 +3,12 @@ import './index.scss';
 
 import { PlayerProvider } from './context/PlayerContext';
 
-import AePlayer from './components/AePlayer';
+import Player from './components/Player';
 
 const App = () => {
   return (
     <PlayerProvider>
-      <AePlayer />
+      <Player />
     </PlayerProvider>
   );
 }
