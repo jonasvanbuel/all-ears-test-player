@@ -2,16 +2,14 @@ import React, { useState } from 'react';
 
 export const ChapterContext = React.createContext();
 
-export const ChapterProvider = (chapterProp) => {
-  console.log(chapterProp);
-
+export const ChapterProvider = ({ children, chapterProp}) => {
   const [ chapter, setChapter ] = useState(chapterProp);
 
-  // useEffect
+  // useEffect!?
 
   return (
     <ChapterContext.Provider value={{ chapter, setChapter }}>
-      {chapterProp.children}
+      {children}
     </ChapterContext.Provider>
   )
 }

@@ -1,21 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import ReactHowler from 'react-howler';
-
-import PpButton from './PpButton';
+import { ChapterContext } from '../context/ChapterContext';
 
 
-const Chapter = ({chapter}) => {
-  // Props
+
+const Chapter = () => {
+  // useContext
+  const { chapter } = React.useContext(ChapterContext);
   const { count, title, audioSrc } = chapter;
 
-  // Local state
-  const [ playing, setPlaying ] = useState(false);
-  const [ currentTimeState, setCurrentTimeState ] = useState(0);
-  const [ totalDurationState, setTotalDurationState ] = useState();
-
-
-  // Should currentTime be state???
-  // const currentTime = useRef(0);
 
   // DOM refs
   const audioRef = useRef();
@@ -25,8 +17,18 @@ const Chapter = ({chapter}) => {
   const fwdBtnRef = useRef();
   const currentTimeRef = useRef();
   const timeRemainingRef = useRef();
-
   const timer = useRef(null);
+
+  // Local Chapter state
+  const [ playing, setPlaying ] = useState(false);
+  const [ currentTimeState, setCurrentTimeState ] = useState(0);
+  const [ totalDurationState, setTotalDurationState ] = useState(null);
+  useEffect(() => {
+    audioRef.current.onloadedmetadata = () => {
+      setTotalDurationState(audioRef.current.duration);
+    }
+  }, [chapter]);
+
 
   const updateTimes = () => {
     setCurrentTimeState(Math.round(audioRef.current.currentTime));
@@ -37,6 +39,7 @@ const Chapter = ({chapter}) => {
   const stopUpdatingCurrentTime = () => {
     clearTimeout(timer.current);
   }
+
   if (audioRef.current) {
     audioRef.current.addEventListener('timeupdate', updateTimes, false)
     // setTotalDurationState(audioRef.current.duration);
@@ -44,9 +47,6 @@ const Chapter = ({chapter}) => {
 
 
   const handlePlay = () => {
-    console.log('handlePlay triggered...');
-    console.log(audioRef)
-
     if (audioRef.current.paused) {
       audioRef.current.play();
     }
@@ -55,8 +55,6 @@ const Chapter = ({chapter}) => {
   }
 
   const handlePause = () => {
-    console.log('handlePause triggered...');
-
     if (!audioRef.current.paused) {
       audioRef.current.pause();
     }
@@ -74,7 +72,6 @@ const Chapter = ({chapter}) => {
   }
 
   const handleFwd = (secs) => {
-    console.log('handleFwd triggered...');
     audioRef.current.currentTime += 10;
   }
 
@@ -90,12 +87,15 @@ const Chapter = ({chapter}) => {
   return (
     <div id={`ch-${count}`} className="chapter">
       <p className="chapter-title">{`Chapter ${count}: ${title}`}</p>
-      <audio preload="auto" ref={audioRef} id='vanilla-audio'>
+
+      <audio preload="metadata" ref={audioRef} className='vanilla-audio' id={`ch-${count}-audio`}>
         <source src={audioSrc[0]} type="audio/webm" />
         <source src={audioSrc[1]} type="audio/mpeg" />
       </audio>
+
       <button ref={playBtnRef} className="pBtn play" onClick={handlePlay}>play</button>
       <button ref={pauseBtnRef} className="pBtn pause" onClick={handlePause}>pause</button>
+
       <button ref={rwndBtnRef} className="pBtn" onClick={() => handleRwnd(10)}>rwnd</button>
       <button ref={fwdBtnRef} className="pBtn" onClick={() => handleFwd(10)}>fwd</button>
 

@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import './index.scss';
+import './Player.scss';
 
-import { PlayerContext } from '../../context/PlayerContext'
+import { PlayerContext } from './context/PlayerContext'
+import { ChapterProvider } from './context/ChapterContext';
 
-// Subcomponents
 import Chapter from './subComponents/Chapter';
-import { ChapterProvider } from '../context/ChapterContext';
 
 const Player = () => {
   const { player } = useContext(PlayerContext);
@@ -14,8 +13,8 @@ const Player = () => {
   return (
     <div id="player">
       {chapters.map((chapter) => (
-        <ChapterProvider key={chapter.count}>
-          <Chapter key={chapter.count} chapter={chapter} />
+        <ChapterProvider key={chapter.count} chapterProp={chapter}>
+          <Chapter key={chapter.count}/>
         </ChapterProvider>
       ))}
     </div>

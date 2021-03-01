@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { PlayerContext } from '../../../context/PlayerContext';
+// import { PlayerContext } from '../../context/PlayerContext';
 
-const PpButton = (props) => {
+const Pbutton = (props) => {
   const { playing, togglePlay } = props;
 
   const handleClick = (event) => {
@@ -10,7 +10,7 @@ const PpButton = (props) => {
 
   return (
     <button
-      className="PpButton"
+      className="pBtn"
       onClick={handleClick}
       data-playing={playing}
       data-chapter-id={1}
@@ -20,4 +20,4 @@ const PpButton = (props) => {
   );
 }
 
-export default PpButton;
+export default Pbutton;
