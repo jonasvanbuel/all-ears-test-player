@@ -22,8 +22,10 @@ const Chapter = () => {
   // Local Chapter state
   const [ playing, setPlaying ] = useState(false);
   const [ currentTimeState, setCurrentTimeState ] = useState(0);
-  const [ totalDurationState, setTotalDurationState ] = useState(null);
+  const [ totalDurationState, setTotalDurationState ] = useState();
+
   useEffect(() => {
+    audioRef.current.addEventListener('timeupdate', updateTimes, false);
     audioRef.current.onloadedmetadata = () => {
       setTotalDurationState(audioRef.current.duration);
     }
@@ -40,13 +42,11 @@ const Chapter = () => {
     clearTimeout(timer.current);
   }
 
-  if (audioRef.current) {
-    audioRef.current.addEventListener('timeupdate', updateTimes, false)
-    // setTotalDurationState(audioRef.current.duration);
-  }
-
 
   const handlePlay = () => {
+    // TO DO: DISPATCH PAUSE FOR ALL OTHER AUDIO FILES
+
+
     if (audioRef.current.paused) {
       audioRef.current.play();
     }
