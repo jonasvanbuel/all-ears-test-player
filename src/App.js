@@ -1,14 +1,14 @@
 import React from 'react';
 import './index.scss';
 
-import { PlayerProvider } from './context/PlayerContext';
+import { PlayerProvider } from './components/Player/context/PlayerContext.js';
 
-import AePlayer from './components/AePlayer';
+import Player from './components/Player/Player';
 
 const App = () => {
   return (
     <PlayerProvider>
-      <AePlayer />
+      <Player />
     </PlayerProvider>
   );
 }
