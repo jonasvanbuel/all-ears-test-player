@@ -45,12 +45,12 @@ const Chapter = () => {
     <div id={`ch-${count}`} className="chapter">
       <p className="chapter-title">{`Chapter ${count}: ${title}`}</p>
 
-      <audio preload="metadata" ref={audioRef} className='player' id={`ch-${count}-audio`}>
+      <audio ref={audioRef} preload="metadata"  className='player' id={`ch-${count}-audio`}>
         <source src={audioSrc[0]} type="audio/webm" />
         <source src={audioSrc[1]} type="audio/mpeg" />
       </audio>
 
-      <Controls setPlaying={setPlaying}/>
+      <Controls />
 
       <p>currentTimeState: {currentTimeState}</p>
       <p>totalDurationState: {totalDurationState}</p>

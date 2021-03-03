@@ -1,24 +1,20 @@
 
 
 const utils = {
-  test: () => {
-    console.log('utils.test triggered...');
+  getAudio: (event) => {
+    if (event) {
+      return event.target.closest('.chapter').getElementsByClassName('player')[0];
+    }
   },
-  getAudio: (e) => {
-    return e.target.closest('.chapter').getElementsByClassName('player')[0];
-  },
-  handleRwnd: (e, secs) => {
-    // if (audioRef.current.currentTime <= 10) {
-    //   audioRef.current.currentTime = 0;
-    // } else {
-    //   audioRef.current.currentTime -= 10;
-    // }
-  },
-  handleFwd: (e, secs) => {
-    // audioRef.current.currentTime += 10;
+  toggleVisible: (playRef) => {
+    // console.log(playRef);
   },
   pauseAllAudio: () => {
-
+    const audioObjects = document.getElementsByTagName('audio');
+    // Refactor!
+    for (let i = 0; i < audioObjects.length; i++) {
+      audioObjects[i].pause();
+    }
   }
 }
 

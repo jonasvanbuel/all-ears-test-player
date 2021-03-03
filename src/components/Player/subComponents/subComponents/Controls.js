@@ -2,28 +2,18 @@ import React, { useRef } from 'react';
 
 import utils from '../../utils';
 
-import PButton from './PButton';
+import Play from './Play';
+import Pause from './Pause';
+import Rwnd from './Rwnd';
+import Fwd from './Fwd';
 
-const Controls = (props) => {
-  const {
-    handleRwnd,
-    handleFwd,
-    test
-  } = utils;
-
-  // useRef might not be required if externalising utils
-
-  const rwndBtnRef = useRef();
-  const fwdBtnRef = useRef();
+const Controls = () => {
   return (
     <div className="controls">
-
-      <PButton />
-
-      <button ref={rwndBtnRef} className="pBtn" onClick={handleRwnd}>rwnd</button>
-      <button ref={fwdBtnRef} className="pBtn" onClick={handleFwd}>fwd</button>
-
-      <button className="pBtn" onClick={test}>test utils</button>
+      <Play />
+      <Pause />
+      <Rwnd />
+      <Fwd />
     </div>
   );
 }
