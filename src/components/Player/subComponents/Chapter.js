@@ -1,59 +1,56 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
-import { ChapterContext } from '../context/ChapterContext';
+import useChapter from '../hooks/useChapter';
 
-import Controls from './subComponents/Controls';
-
-const Chapter = () => {
-  // useContext
-  const { chapter } = React.useContext(ChapterContext);
-  const { count, title, audioSrc } = chapter;
+import Play from './Play';
+import Pause from './Pause';
+import Rwnd from './Rwnd';
+import Fwd from './Fwd';
 
 
-  // DOM refs
+const Chapter = (props) => {
+  const { number, title, audioSrc } = props.chapter;
+  const {
+    playing,
+    setPlaying,
+    duration,
+    curTime,
+    updateCurTime,
+    pauseOtherChapters
+  } = useChapter(number);
   const audioRef = useRef();
 
-  const currentTimeRef = useRef();
-  const timeRemainingRef = useRef();
-  const timer = useRef(null);
+  // Pause all chapters from here???
 
-  // Local Chapter state
-  const [ playing, setPlaying ] = useState(false);
-  const [ currentTimeState, setCurrentTimeState ] = useState(0);
-  const [ totalDurationState, setTotalDurationState ] = useState();
-
-  useEffect(() => {
-    audioRef.current.addEventListener('timeupdate', updateTimes, false);
-    audioRef.current.onloadedmetadata = () => {
-      setTotalDurationState(audioRef.current.duration);
-    }
-  }, [chapter]);
-
-  const updateTimes = () => {
-    setCurrentTimeState(Math.round(audioRef.current.currentTime));
-  }
-
-  const startUpdatingCurrentTime = () => {
-    timer.current = setTimeout(updateTimes, 100);
-  }
-
-  const stopUpdatingCurrentTime = () => {
-    clearTimeout(timer.current);
-  }
 
   return (
-    <div id={`ch-${count}`} className="chapter">
-      <p className="chapter-title">{`Chapter ${count}: ${title}`}</p>
+    <div id={`ch-${number}`} className="chapter">
 
-      <audio ref={audioRef} preload="metadata"  className='player' id={`ch-${count}-audio`}>
+      <p className="chapter-title">{`Chapter ${number}: ${title}`}</p>
+
+      <audio
+        id={`ch-${number}-audio`}
+        className='player'
+        ref={audioRef}
+        preload="metadata"
+      >
         <source src={audioSrc[0]} type="audio/webm" />
         <source src={audioSrc[1]} type="audio/mpeg" />
       </audio>
 
-      <Controls />
+      <Play playing={playing} setPlaying={setPlaying} pauseOtherChapters={() => pauseOtherChapters(number)} />
+      <Pause playing={playing} setPlaying={setPlaying} />
 
-      <p>currentTimeState: {currentTimeState}</p>
-      <p>totalDurationState: {totalDurationState}</p>
+      <div>
+       <Rwnd updateCurTime={() => updateCurTime('rwnd')}/>
+       <Fwd updateCurTime={() => updateCurTime('fwd')}/>
+      </div>
+
+      <p>playing: {playing === true ? "true" : "false"}</p>
+      <p>duration: {duration}</p>
+      <p>current time: {curTime}</p>
+      <p>percentage: {(curTime / duration) * 100}%</p>
+
     </div>
   );
 }
