@@ -1,20 +1,9 @@
-
-
 const utils = {
-  getAudio: (event) => {
-    if (event) {
-      return event.target.closest('.chapter').getElementsByClassName('player')[0];
-    }
+  getChapter: (chapterNumber) => {
+    return document.getElementById(`ch-${chapterNumber}`);
   },
-  toggleVisible: (playRef) => {
-    // console.log(playRef);
-  },
-  pauseAllAudio: () => {
-    const audioObjects = document.getElementsByTagName('audio');
-    // Refactor!
-    for (let i = 0; i < audioObjects.length; i++) {
-      audioObjects[i].pause();
-    }
+  getAudio: (chapterNumber) => {
+    return document.getElementById(`ch-${chapterNumber}-audio`);
   }
 }
 

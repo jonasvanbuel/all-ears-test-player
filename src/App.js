@@ -7,9 +7,7 @@ import Player from './components/Player/Player';
 
 const App = () => {
   return (
-    <PlayerProvider>
-      <Player />
-    </PlayerProvider>
+    <Player />
   );
 }
 
