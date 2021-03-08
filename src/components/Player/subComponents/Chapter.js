@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 import useChapter from '../hooks/useChapter';
 
@@ -19,8 +19,13 @@ const Chapter = (props) => {
     pauseOtherChapters
   } = useChapter(number);
   const audioRef = useRef();
+  const soundRef = useRef();
 
-  // Pause all chapters from here???
+  // useEffect(() => {
+  //   soundRef.current = new Audio(audioSrc[0]);
+  //   debugger
+  // },[audioSrc]);
+
 
 
   return (
@@ -32,7 +37,7 @@ const Chapter = (props) => {
         id={`ch-${number}-audio`}
         className='player'
         ref={audioRef}
-        preload="metadata"
+        preload="none"
       >
         <source src={audioSrc[0]} type="audio/webm" />
         <source src={audioSrc[1]} type="audio/mpeg" />
