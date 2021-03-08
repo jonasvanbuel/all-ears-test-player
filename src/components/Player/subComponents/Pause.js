@@ -1,14 +1,10 @@
 const Pause = (props) => {
-  const { playing, setPlaying } = props;
-
-  const handlePause = (event) => {
-    setPlaying(false);
-  }
+  const { playing, onClick } = props;
 
   return (
     <button
       className={`pBtn pause ${playing ? "" : "hide"}`}
-      onClick={handlePause}
+      onClick={onClick}
     >
       PAUSE
     </button>

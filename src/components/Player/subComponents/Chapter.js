@@ -19,24 +19,16 @@ const Chapter = ({ chapter }) => {
     pauseOtherChapters
   } = useChapter(chapter);
   const audioRef = useRef();
-  const soundRef = useRef();
-
-  useEffect(() => {
-    soundRef.current = new Audio(audioSrc[1]);
-  },[audioSrc]);
 
   const handlePlay = () => {
-    // console.log('hanleClick triggered...');
+    pauseOtherChapters();
+
     const promise = audioRef.current.play();
     if (promise !== undefined) {
       promise.then(() => {
-        // console.log('temp audio element playing from js');
         setPlaying(true);
-        document.getElementById('debug').innerText = 'temp audio element playing from js';
       }).catch((error) => {
-        // console.log('temp audio element ERROR - cant play');
         console.log(error);
-        document.getElementById('debug').innerText = 'temp audio element ERROR - cant play';
       })
     }
   }
@@ -62,10 +54,12 @@ const Chapter = ({ chapter }) => {
 
       <Play
         playing={playing}
-        setPlaying={setPlaying}
-        pauseOtherChapters={() => pauseOtherChapters(number)}
+        onClick={handlePlay}
       />
-      <Pause playing={playing} setPlaying={setPlaying} />
+      <Pause
+        playing={playing}
+        onClick={handlePause}
+      />
 
       <div>
        <Rwnd updateCurTime={() => updateCurTime('rwnd')}/>
