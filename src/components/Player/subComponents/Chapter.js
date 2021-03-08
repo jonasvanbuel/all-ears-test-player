@@ -21,12 +21,22 @@ const Chapter = (props) => {
   const audioRef = useRef();
   const soundRef = useRef();
 
-  // useEffect(() => {
-  //   soundRef.current = new Audio(audioSrc[0]);
-  //   debugger
-  // },[audioSrc]);
+  useEffect(() => {
+    soundRef.current = new Audio(audioSrc[0]);
+  },[audioSrc]);
 
-
+  const handleClick = () => {
+    console.log('hanleClick triggered...');
+    const promise = soundRef.current.play();
+    if (promise !== undefined) {
+      promise.then(() => {
+        console.log('temp audio element playing from js');
+      }).catch((error) => {
+        console.log('temp audio element ERROR - cant play');
+        console.log(error);
+      })
+    }
+  }
 
   return (
     <div id={`ch-${number}`} className="chapter">
@@ -43,13 +53,19 @@ const Chapter = (props) => {
         <source src={audioSrc[1]} type="audio/mpeg" />
       </audio>
 
-      <Play playing={playing} setPlaying={setPlaying} pauseOtherChapters={() => pauseOtherChapters(number)} />
+      <Play
+        playing={playing}
+        setPlaying={setPlaying}
+        pauseOtherChapters={() => pauseOtherChapters(number)}
+      />
       <Pause playing={playing} setPlaying={setPlaying} />
 
       <div>
        <Rwnd updateCurTime={() => updateCurTime('rwnd')}/>
        <Fwd updateCurTime={() => updateCurTime('fwd')}/>
       </div>
+
+      <button onClick={handleClick}>play js audio</button>
 
       <p>playing: {playing === true ? "true" : "false"}</p>
       <p>duration: {duration}</p>
