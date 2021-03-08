@@ -33,6 +33,11 @@ function App() {
         <h1><a href="https://www.jqueryscript.net/other/Circular-Html5-Audio-Player-jQuery.html">Circular HTML5 audio player from example - using jQuery</a></h1>
         <CircularPlayerJquery />
 
+        <h1><a href="https://github.com/soundar24/roundSlider">Round Slider</a></h1>
+
+        <h1><a href="https://css-tricks.com/a-super-flexible-css-carousel-enhanced-with-javascript-navigation/">A super flexible CSS Carousel Enhanced with JavaScript</a></h1>
+
+
       </div>
     </div>
   );
