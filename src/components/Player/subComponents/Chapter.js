@@ -22,7 +22,7 @@ const Chapter = (props) => {
   const soundRef = useRef();
 
   useEffect(() => {
-    soundRef.current = new Audio(audioSrc[0]);
+    soundRef.current = new Audio(audioSrc[1]);
   },[audioSrc]);
 
   const handleClick = () => {
@@ -52,7 +52,6 @@ const Chapter = (props) => {
         autoPlay={false}
         preload="none"
       >
-        <source src={audioSrc[0]} type="audio/webm" />
         <source src={audioSrc[1]} type="audio/mpeg" />
       </audio>
 
