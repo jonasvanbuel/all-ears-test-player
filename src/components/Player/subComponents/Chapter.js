@@ -8,8 +8,8 @@ import Rwnd from './Rwnd';
 import Fwd from './Fwd';
 
 
-const Chapter = (props) => {
-  const { number, title, audioSrc } = props.chapter;
+const Chapter = ({ chapter }) => {
+  const { number, title, audioSrc } = chapter;
   const {
     playing,
     setPlaying,
@@ -17,7 +17,7 @@ const Chapter = (props) => {
     curTime,
     updateCurTime,
     pauseOtherChapters
-  } = useChapter(number);
+  } = useChapter(chapter);
   const audioRef = useRef();
   const soundRef = useRef();
 
@@ -25,19 +25,24 @@ const Chapter = (props) => {
     soundRef.current = new Audio(audioSrc[1]);
   },[audioSrc]);
 
-  const handleClick = () => {
-    console.log('hanleClick triggered...');
-    const promise = soundRef.current.play();
+  const handlePlay = () => {
+    // console.log('hanleClick triggered...');
+    const promise = audioRef.current.play();
     if (promise !== undefined) {
       promise.then(() => {
-        console.log('temp audio element playing from js');
+        // console.log('temp audio element playing from js');
+        setPlaying(true);
         document.getElementById('debug').innerText = 'temp audio element playing from js';
       }).catch((error) => {
-        console.log('temp audio element ERROR - cant play');
-        document.getElementById('debug').innerText = 'temp audio element ERROR - cant play';
+        // console.log('temp audio element ERROR - cant play');
         console.log(error);
+        document.getElementById('debug').innerText = 'temp audio element ERROR - cant play';
       })
     }
+  }
+
+  const handlePause = () => {
+    audioRef.current.pause();
   }
 
   return (
@@ -67,7 +72,8 @@ const Chapter = (props) => {
        <Fwd updateCurTime={() => updateCurTime('fwd')}/>
       </div>
 
-      <button onClick={handleClick}>play js audio</button>
+      <button onClick={handlePlay}>play js audio</button>
+      <button onClick={handlePause}>pause js audio</button>
       <p id='debug'></p>
 
 

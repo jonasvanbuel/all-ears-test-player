@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import utils from '../utils';
 
-function useChapter(chapterNumber) {
+function useChapter(chapter) {
   const [playing, setPlaying] = useState(false);
   const [duration, setDuration] = useState(null);
   const [curTime, setCurTime] = useState(0);
 
+  let audioRef = useRef();
+
   useEffect(() => {
-    const audio = utils.getAudio(chapterNumber);
+    audioRef.current = utils.getAudio(chapter.number);
+    const audio = audioRef.current;
 
     const setPlayingTrue = () => {
       setPlaying(true);
@@ -42,33 +45,31 @@ function useChapter(chapterNumber) {
     }
   });
 
-  useEffect(() => {
-    const audio = utils.getAudio(chapterNumber);
-    // Persist state change to audio element
-    // playing ? audio.play() : audio.pause()
+  // useEffect(() => {
+  //   const audio = utils.getAudio(chapterNumber);
+  //   // Persist state change to audio element
+  //   // playing ? audio.play() : audio.pause()
 
-    // Asynchronous attempt
-    if (playing === true) {
-      const promise = audio.play();
-      if(promise !== undefined) {
-        promise.then(() => {
-          console.log('audio confirmed playing...')
-          document.getElementById('debug').innerText = 'audio confirmed playing...';
-        }).catch(error => console.error);
-      }
-    } else {
-      audio.pause();
-      console.log('audio paused...');
-      document.getElementById('debug').innerText = 'audio paused...';
-    }
+  //   // Asynchronous attempt
+  //   if (playing === true) {
+  //     const promise = audio.play();
+  //     if(promise !== undefined) {
+  //       promise.then(() => {
+  //         console.log('audio confirmed playing...')
+  //         document.getElementById('debug').innerText = 'audio confirmed playing...';
+  //       }).catch(error => console.error);
+  //     }
+  //   } else {
+  //     audio.pause();
+  //     console.log('audio paused...');
+  //     document.getElementById('debug').innerText = 'audio paused...';
+  //   }
 
-  }, [playing])
-
-
-
+  // }, [playing])
 
   const updateCurTime = (direction) => {
-    const audio = utils.getAudio(chapterNumber);
+    // const audio = utils.getAudio(chapterNumber);
+    const audio = audioRef.current;
     switch (direction) {
       case 'rwnd':
         if (audio.currentTime >= 10) {
