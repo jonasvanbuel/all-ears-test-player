@@ -47,8 +47,9 @@ const Chapter = ({ chapter }) => {
         className='player'
         ref={audioRef}
         autoPlay={false}
-        preload="none"
+        preload="auto"
       >
+        <source src={audioSrc[0]} type="audio/webm" />
         <source src={audioSrc[1]} type="audio/mpeg" />
       </audio>
 
@@ -65,11 +66,6 @@ const Chapter = ({ chapter }) => {
        <Rwnd updateCurTime={() => updateCurTime('rwnd')}/>
        <Fwd updateCurTime={() => updateCurTime('fwd')}/>
       </div>
-
-      <button onClick={handlePlay}>play js audio</button>
-      <button onClick={handlePause}>pause js audio</button>
-      <p id='debug'></p>
-
 
       <p>playing: {playing === true ? "true" : "false"}</p>
       <p>duration: {duration}</p>
