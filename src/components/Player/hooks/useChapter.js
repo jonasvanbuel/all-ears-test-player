@@ -45,8 +45,27 @@ function useChapter(chapterNumber) {
   useEffect(() => {
     const audio = utils.getAudio(chapterNumber);
     // Persist state change to audio element
-    playing ? audio.play() : audio.pause()
+    // playing ? audio.play() : audio.pause()
+
+    // Asynchronous attempt
+    if (playing === true) {
+      const promise = audio.play();
+      if(promise !== undefined) {
+        promise.then(() => {
+          console.log('audio confirmed playing...')
+          document.getElementById('debug').innerText = 'audio confirmed playing...';
+        }).catch(error => console.error);
+      }
+    } else {
+      audio.pause();
+      console.log('audio paused...');
+      document.getElementById('debug').innerText = 'audio paused...';
+    }
+
   }, [playing])
+
+
+
 
   const updateCurTime = (direction) => {
     const audio = utils.getAudio(chapterNumber);

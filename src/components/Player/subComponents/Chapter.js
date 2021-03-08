@@ -49,6 +49,7 @@ const Chapter = (props) => {
         id={`ch-${number}-audio`}
         className='player'
         ref={audioRef}
+        autoPlay={false}
         preload="none"
       >
         <source src={audioSrc[0]} type="audio/webm" />

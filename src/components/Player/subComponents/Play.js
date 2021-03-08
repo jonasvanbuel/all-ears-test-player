@@ -7,7 +7,8 @@ const Play = (props) => {
 
   const handlePlay = () => {
     pauseOtherChapters();
-    setInterval(setPlaying(true), 10);
+    // setInterval(setPlaying(true), 10);
+    setPlaying(true);
   }
 
   return (
