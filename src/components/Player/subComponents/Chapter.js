@@ -31,8 +31,10 @@ const Chapter = (props) => {
     if (promise !== undefined) {
       promise.then(() => {
         console.log('temp audio element playing from js');
+        document.getElementById('debug').innerText = 'temp audio element playing from js';
       }).catch((error) => {
         console.log('temp audio element ERROR - cant play');
+        document.getElementById('debug').innerText = 'temp audio element ERROR - cant play';
         console.log(error);
       })
     }
@@ -66,6 +68,8 @@ const Chapter = (props) => {
       </div>
 
       <button onClick={handleClick}>play js audio</button>
+      <p id='debug'></p>
+
 
       <p>playing: {playing === true ? "true" : "false"}</p>
       <p>duration: {duration}</p>

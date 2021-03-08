@@ -9,9 +9,7 @@ const Player = () => {
 
   useEffect(() => {
     function unlockAudio() {
-      console.log('unlockAudio triggered...');
       const sound = new Audio('https://res.cloudinary.com/deo4sjfc8/video/upload/v1615230452/2021-all-ears-test-player/audio/unlock_audio_ulkvqp.mp3');
-      console.log(sound);
       const promise = sound.play();
 
       if (promise !== undefined) {
