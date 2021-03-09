@@ -16,6 +16,8 @@ const Chapter = ({ chapter }) => {
     duration,
     curTime,
     updateCurTime,
+    handlePlayTest,
+    handlePauseTest,
     pauseOtherChapters
   } = useChapter(chapter);
   const audioRef = useRef();
@@ -55,11 +57,11 @@ const Chapter = ({ chapter }) => {
 
       <Play
         playing={playing}
-        onClick={handlePlay}
+        onClick={handlePlayTest}
       />
       <Pause
         playing={playing}
-        onClick={handlePause}
+        onClick={handlePauseTest}
       />
 
       <div>

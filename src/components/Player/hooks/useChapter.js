@@ -11,6 +11,7 @@ function useChapter(chapter) {
   useEffect(() => {
     audioRef.current = utils.getAudio(chapter.number);
     const audio = audioRef.current;
+    console.log(audio);
 
     const setPlayingTrue = () => {
       setPlaying(true);
@@ -43,13 +44,12 @@ function useChapter(chapter) {
       audio.removeEventListener('playing', setPlayingTrue);
       audio.removeEventListener('pause', setPlayingFalse);
     }
-  });
+  }, []);
 
   // useEffect(() => {
   //   const audio = utils.getAudio(chapterNumber);
   //   // Persist state change to audio element
   //   // playing ? audio.play() : audio.pause()
-
   //   // Asynchronous attempt
   //   if (playing === true) {
   //     const promise = audio.play();
@@ -64,8 +64,24 @@ function useChapter(chapter) {
   //     console.log('audio paused...');
   //     document.getElementById('debug').innerText = 'audio paused...';
   //   }
-
   // }, [playing])
+
+  const handlePlayTest = () => {
+    pauseOtherChapters();
+
+    const promise = audioRef.current.play();
+    if (promise !== undefined) {
+      promise.then(() => {
+        setPlaying(true);
+      }).catch((error) => {
+        console.log(error);
+      })
+    }
+  }
+
+  const handlePauseTest = () => {
+    audioRef.current.pause();
+  }
 
   const updateCurTime = (direction) => {
     // const audio = utils.getAudio(chapterNumber);
@@ -113,6 +129,8 @@ function useChapter(chapter) {
     duration,
     setDuration,
     curTime,
+    handlePlayTest,
+    handlePauseTest,
     setCurTime,
     updateCurTime,
     pauseOtherChapters
