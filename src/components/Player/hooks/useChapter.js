@@ -46,46 +46,9 @@ function useChapter(chapter) {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const audio = utils.getAudio(chapterNumber);
-  //   // Persist state change to audio element
-  //   // playing ? audio.play() : audio.pause()
-  //   // Asynchronous attempt
-  //   if (playing === true) {
-  //     const promise = audio.play();
-  //     if(promise !== undefined) {
-  //       promise.then(() => {
-  //         console.log('audio confirmed playing...')
-  //         document.getElementById('debug').innerText = 'audio confirmed playing...';
-  //       }).catch(error => console.error);
-  //     }
-  //   } else {
-  //     audio.pause();
-  //     console.log('audio paused...');
-  //     document.getElementById('debug').innerText = 'audio paused...';
-  //   }
-  // }, [playing])
-
-  const handlePlayTest = () => {
-    pauseOtherChapters();
-
-    const promise = audioRef.current.play();
-    if (promise !== undefined) {
-      promise.then(() => {
-        setPlaying(true);
-      }).catch((error) => {
-        console.log(error);
-      })
-    }
-  }
-
-  const handlePauseTest = () => {
-    audioRef.current.pause();
-  }
-
   const updateCurTime = (direction) => {
-    // const audio = utils.getAudio(chapterNumber);
     const audio = audioRef.current;
+
     switch (direction) {
       case 'rwnd':
         if (audio.currentTime >= 10) {
@@ -115,12 +78,38 @@ function useChapter(chapter) {
 
     // ONLY PAUSE THE OTHER ONES!?
     // chapterNumber is the one being triggered...
-
     for (let i = 0; i < audioObjects.length; i++) {
       if (audioObjects[i] !== audio && !audioObjects[i].paused) {
         audioObjects[i].pause();
       }
     }
+  }
+
+  const handlePlay = () => {
+    pauseOtherChapters();
+
+    const promise = audioRef.current.play();
+    if (promise !== undefined) {
+      promise.then(() => {
+        setPlaying(true);
+      }).catch((error) => {
+        console.log(error);
+      })
+    }
+  }
+
+  const handlePause = () => {
+    audioRef.current.pause();
+  }
+
+  const handleRwnd = () => {
+    console.log('handleRwnd triggered in useChapter.js...');
+    updateCurTime('rwnd');
+  }
+
+  const handleFwd = () => {
+    console.log('handleFwd triggered in useChapter.js...');
+    updateCurTime('fwd');
   }
 
   return {
@@ -129,11 +118,13 @@ function useChapter(chapter) {
     duration,
     setDuration,
     curTime,
-    handlePlayTest,
-    handlePauseTest,
     setCurTime,
     updateCurTime,
-    pauseOtherChapters
+    pauseOtherChapters,
+    handlePlay,
+    handlePause,
+    handleRwnd,
+    handleFwd
   }
 }
 

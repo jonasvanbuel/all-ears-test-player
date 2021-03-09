@@ -1,6 +1,6 @@
-const Rwnd = ({ updateCurTime }) => {
+const Rwnd = ({ onClick }) => {
   return (
-    <button className="pBtn" onClick={updateCurTime}>rwnd</button>
+    <button className="pBtn" onClick={onClick}>rwnd</button>
   )
 }
 

@@ -1,5 +1,3 @@
-import { useRef, useEffect } from 'react';
-
 import useChapter from '../hooks/useChapter';
 
 import Play from './Play';
@@ -12,42 +10,21 @@ const Chapter = ({ chapter }) => {
   const { number, title, audioSrc } = chapter;
   const {
     playing,
-    setPlaying,
     duration,
     curTime,
-    updateCurTime,
-    handlePlayTest,
-    handlePauseTest,
-    pauseOtherChapters
+    handlePlay,
+    handlePause,
+    handleRwnd,
+    handleFwd
   } = useChapter(chapter);
-  const audioRef = useRef();
-
-  const handlePlay = () => {
-    pauseOtherChapters();
-
-    const promise = audioRef.current.play();
-    if (promise !== undefined) {
-      promise.then(() => {
-        setPlaying(true);
-      }).catch((error) => {
-        console.log(error);
-      })
-    }
-  }
-
-  const handlePause = () => {
-    audioRef.current.pause();
-  }
 
   return (
     <div id={`ch-${number}`} className="chapter">
-
       <p className="chapter-title">{`Chapter ${number}: ${title}`}</p>
 
       <audio
         id={`ch-${number}-audio`}
         className='player'
-        ref={audioRef}
         autoPlay={false}
         preload="auto"
       >
@@ -55,18 +32,11 @@ const Chapter = ({ chapter }) => {
         <source src={audioSrc[1]} type="audio/mpeg" />
       </audio>
 
-      <Play
-        playing={playing}
-        onClick={handlePlayTest}
-      />
-      <Pause
-        playing={playing}
-        onClick={handlePauseTest}
-      />
-
+      <Play playing={playing} onClick={handlePlay} />
+      <Pause playing={playing} onClick={handlePause} />
       <div>
-       <Rwnd updateCurTime={() => updateCurTime('rwnd')}/>
-       <Fwd updateCurTime={() => updateCurTime('fwd')}/>
+        <Rwnd onClick={handleRwnd} />
+        <Fwd onClick={handleFwd} />
       </div>
 
       <p>playing: {playing === true ? "true" : "false"}</p>
