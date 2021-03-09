@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import utils from '../utils';
 
-function useChapter(chapterNumber) {
+function useChapter(chapter) {
   const [playing, setPlaying] = useState(false);
   const [duration, setDuration] = useState(null);
   const [curTime, setCurTime] = useState(0);
 
+  let audioRef = useRef();
+
   useEffect(() => {
-    const audio = utils.getAudio(chapterNumber);
+    audioRef.current = utils.getAudioEl(chapter.number);
+    const audio = audioRef.current;
 
     const setPlayingTrue = () => {
       setPlaying(true);
@@ -40,16 +43,11 @@ function useChapter(chapterNumber) {
       audio.removeEventListener('playing', setPlayingTrue);
       audio.removeEventListener('pause', setPlayingFalse);
     }
-  });
-
-  useEffect(() => {
-    const audio = utils.getAudio(chapterNumber);
-    // Persist state change to audio element
-    playing ? audio.play() : audio.pause()
-  }, [playing])
+  }, []);
 
   const updateCurTime = (direction) => {
-    const audio = utils.getAudio(chapterNumber);
+    const audio = audioRef.current;
+
     switch (direction) {
       case 'rwnd':
         if (audio.currentTime >= 10) {
@@ -74,17 +72,41 @@ function useChapter(chapterNumber) {
   }
 
   const pauseOtherChapters = (chapterNumber) => {
-    const audio = utils.getAudio(chapterNumber);
+    const audio = utils.getAudioEl(chapterNumber);
     const audioObjects = document.getElementsByTagName('audio');
 
     // ONLY PAUSE THE OTHER ONES!?
     // chapterNumber is the one being triggered...
-
     for (let i = 0; i < audioObjects.length; i++) {
       if (audioObjects[i] !== audio && !audioObjects[i].paused) {
         audioObjects[i].pause();
       }
     }
+  }
+
+  const handlePlay = () => {
+    pauseOtherChapters();
+
+    const promise = audioRef.current.play();
+    if (promise !== undefined) {
+      promise.then(() => {
+        setPlaying(true);
+      }).catch((error) => {
+        console.log(error);
+      })
+    }
+  }
+
+  const handlePause = () => {
+    audioRef.current.pause();
+  }
+
+  const handleRwnd = () => {
+    updateCurTime('rwnd');
+  }
+
+  const handleFwd = () => {
+    updateCurTime('fwd');
   }
 
   return {
@@ -95,7 +117,11 @@ function useChapter(chapterNumber) {
     curTime,
     setCurTime,
     updateCurTime,
-    pauseOtherChapters
+    pauseOtherChapters,
+    handlePlay,
+    handlePause,
+    handleRwnd,
+    handleFwd
   }
 }
 

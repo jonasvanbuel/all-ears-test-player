@@ -1,8 +1,8 @@
 const utils = {
-  getChapter: (chapterNumber) => {
+  getChapterEl: (chapterNumber) => {
     return document.getElementById(`ch-${chapterNumber}`);
   },
-  getAudio: (chapterNumber) => {
+  getAudioEl: (chapterNumber) => {
     return document.getElementById(`ch-${chapterNumber}-audio`);
   }
 }

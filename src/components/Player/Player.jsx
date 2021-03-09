@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import './Player.scss';
 
 import usePlayer from './hooks/usePlayer';

@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { data } from '../data';
-import useChapter from './useChapter';
 
 function usePlayer() {
   const [exhibition, setExhibition] = useState(data.exhibition);
