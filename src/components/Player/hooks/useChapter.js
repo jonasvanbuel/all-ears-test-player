@@ -9,9 +9,8 @@ function useChapter(chapter) {
   let audioRef = useRef();
 
   useEffect(() => {
-    audioRef.current = utils.getAudio(chapter.number);
+    audioRef.current = utils.getAudioEl(chapter.number);
     const audio = audioRef.current;
-    console.log(audio);
 
     const setPlayingTrue = () => {
       setPlaying(true);
@@ -73,7 +72,7 @@ function useChapter(chapter) {
   }
 
   const pauseOtherChapters = (chapterNumber) => {
-    const audio = utils.getAudio(chapterNumber);
+    const audio = utils.getAudioEl(chapterNumber);
     const audioObjects = document.getElementsByTagName('audio');
 
     // ONLY PAUSE THE OTHER ONES!?
@@ -103,12 +102,10 @@ function useChapter(chapter) {
   }
 
   const handleRwnd = () => {
-    console.log('handleRwnd triggered in useChapter.js...');
     updateCurTime('rwnd');
   }
 
   const handleFwd = () => {
-    console.log('handleFwd triggered in useChapter.js...');
     updateCurTime('fwd');
   }
 
