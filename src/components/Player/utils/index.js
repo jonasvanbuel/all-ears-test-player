@@ -14,6 +14,13 @@ const utils = {
     if (element.classList.contains("hide")) {
       element.classList.remove("hide");
     }
+  },
+  getAngleRadian: (p0, p1, p2) => {
+    // centerPoint is p1; angle returned in Radians
+    const b = Math.pow(p1.x-p0.x,2) + Math.pow(p1.y-p0.y,2);
+    const a = Math.pow(p1.x-p2.x,2) + Math.pow(p1.y-p2.y,2);
+    const c = Math.pow(p2.x-p0.x,2) + Math.pow(p2.y-p0.y,2);
+    return Math.acos( (a+b-c) / Math.sqrt(4*a*b) );
   }
 }
 

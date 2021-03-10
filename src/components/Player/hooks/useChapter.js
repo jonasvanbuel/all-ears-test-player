@@ -71,6 +71,11 @@ function useChapter(chapter) {
     }
   }
 
+  const setCurTimeAudio = (newTime) => {
+    const audio = audioRef.current;
+    audio.currentTime = newTime;
+  }
+
   const pauseOtherChapters = (chapterNumber) => {
     const audio = utils.getAudioEl(chapterNumber);
     const audioObjects = document.getElementsByTagName('audio');
@@ -116,6 +121,7 @@ function useChapter(chapter) {
     setDuration,
     curTime,
     setCurTime,
+    setCurTimeAudio,
     updateCurTime,
     pauseOtherChapters,
     handlePlay,

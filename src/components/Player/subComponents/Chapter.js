@@ -13,6 +13,7 @@ const Chapter = ({ chapter }) => {
     playing,
     duration,
     curTime,
+    setCurTimeAudio,
     handlePlay,
     handlePause,
     handleRwnd,
@@ -44,6 +45,7 @@ const Chapter = ({ chapter }) => {
         number={number}
         curTime={curTime}
         duration={duration}
+        setCurTimeAudio={setCurTimeAudio}
       />
 
       <p>playing: {playing === true ? "true" : "false"}</p>
