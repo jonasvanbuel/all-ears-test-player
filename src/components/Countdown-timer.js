@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-
-import {Howl, Howler} from 'howler';
+import React from 'react';
 
 function CountdownTimer() {
 

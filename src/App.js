@@ -14,7 +14,7 @@ function App() {
       <div className="container">
 
         <div>
-          <h1>HTML5 audio tag</h1>
+          <h1><a href="http://alexkatz.me/posts/building-a-custom-html5-audio-player-with-javascript/">HTML5 audio tag</a></h1>
           <audio
             controls
             src="https://res.cloudinary.com/deo4sjfc8/video/upload/v1613495616/2021-all-ears-test-player/audio/05-Piano_nqmair.mp3">
