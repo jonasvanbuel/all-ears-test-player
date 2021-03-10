@@ -1,7 +1,3 @@
-// import utils from '../utils';
-
-// import useChapter from '../hooks/useChapter';
-
 const Play = (props) => {
   const { playing, onClick } = props;
 

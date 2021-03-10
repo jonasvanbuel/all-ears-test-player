@@ -4,6 +4,16 @@ const utils = {
   },
   getAudioEl: (chapterNumber) => {
     return document.getElementById(`ch-${chapterNumber}-audio`);
+  },
+  hideEl: (element) => {
+    if (!element.classList.contains("hide")) {
+      element.classList.add("hide");
+    }
+  },
+  unhideEl: (element) => {
+    if (element.classList.contains("hide")) {
+      element.classList.remove("hide");
+    }
   }
 }
 

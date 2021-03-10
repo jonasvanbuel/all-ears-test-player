@@ -4,6 +4,7 @@ import Play from './Play';
 import Pause from './Pause';
 import Rwnd from './Rwnd';
 import Fwd from './Fwd';
+import ProgressCircle from './ProgressCircle';
 
 
 const Chapter = ({ chapter }) => {
@@ -38,6 +39,12 @@ const Chapter = ({ chapter }) => {
         <Rwnd onClick={handleRwnd} />
         <Fwd onClick={handleFwd} />
       </div>
+
+      <ProgressCircle
+        number={number}
+        curTime={curTime}
+        duration={duration}
+      />
 
       <p>playing: {playing === true ? "true" : "false"}</p>
       <p>duration: {duration}</p>
