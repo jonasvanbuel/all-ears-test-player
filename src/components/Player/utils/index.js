@@ -21,6 +21,14 @@ const utils = {
     const a = Math.pow(p1.x-p2.x,2) + Math.pow(p1.y-p2.y,2);
     const c = Math.pow(p2.x-p0.x,2) + Math.pow(p2.y-p0.y,2);
     return Math.acos( (a+b-c) / Math.sqrt(4*a*b) );
+  },
+  getDegrees: (degrees, clickPoint) => {
+    // range: 0 - 180 degrees
+    if (clickPoint.x <= 100) {
+      return 360 - degrees;
+    } else {
+      return degrees;
+    }
   }
 }
 
