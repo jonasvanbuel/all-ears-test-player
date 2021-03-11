@@ -15,6 +15,10 @@ const utils = {
       element.classList.remove("hide");
     }
   },
+  getTimeElapsedEl: (chapterNumber) => {
+    const progressCircle = document.getElementById(`ch-${chapterNumber}-progress-circle`);
+    return progressCircle.querySelector('.time-elapsed')
+  },
   getAngleRadian: (p0, p1, p2) => {
     // centerPoint is p1; angle returned in Radians
     const b = Math.pow(p1.x-p0.x,2) + Math.pow(p1.y-p0.y,2);

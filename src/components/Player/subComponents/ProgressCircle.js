@@ -1,53 +1,9 @@
-import { useEffect, useRef } from 'react';
-import utils from '../utils';
-
+import useProgressCircle from '../hooks/useProgressCircle';
 import './ProgressCircle.scss';
 
 const ProgressCircle = (props) => {
-  const { number, curTime, duration, setCurTimeAudio } = props;
-
-  // setCurTime needed
-
-  const totalTimeRef = useRef();
-  const timeElapsedRef = useRef();
-  let circumference = useRef(2 * Math.PI * 45);
-
-  useEffect(() => {
-    const totalTimeRefCopy = totalTimeRef.current;
-
-    const centerPoint = { x: 100, y: 100 };
-    const referencePoint = { x: 100, y: 0 };
-
-    const onClick = (event) => {
-      const clickPoint = { x: event.layerX, y: event.layerY };
-      const radian = utils.getAngleRadian(referencePoint, centerPoint, clickPoint);
-      const rawDegrees = radian * (180 / Math.PI)
-      const degrees = utils.getDegrees(rawDegrees, clickPoint);
-      const percentage = degrees / 360;
-      const clickedTime = percentage * duration;
-      setCurTimeAudio(clickedTime);
-    }
-
-    totalTimeRefCopy.addEventListener("click", onClick)
-
-    return () => (
-      totalTimeRefCopy.removeEventListener("click", onClick)
-    )
-  }, [duration, setCurTimeAudio])
-
-
-  useEffect(() => {
-    const strokeDasharray = () => {
-      const percentage = (curTime / duration);
-      return `${percentage * circumference.current} ${circumference.current}`
-    }
-
-    if (curTime > 0) {
-      utils.unhideEl(timeElapsedRef.current)
-      timeElapsedRef.current.setAttribute("stroke-dasharray", strokeDasharray());
-    }
-
-  }, [curTime, duration])
+  const { number } = props;
+  const { circumference, handleClick } = useProgressCircle(props)
 
   return (
     <svg
@@ -58,14 +14,14 @@ const ProgressCircle = (props) => {
     >
       <g className="circle-container">
         <circle
-          ref={totalTimeRef}
           className="total-time"
-          cx="50" cy="50" r="45">
+          cx="50" cy="50" r="45"
+          onClick={handleClick}>
         </circle>
         <path
-          ref={timeElapsedRef}
           className="time-elapsed hide"
-          strokeDasharray={`${0} ${circumference.current}`}
+          strokeDasharray={`${0} ${circumference}`}
+          onClick={handleClick}
           d="
             M 50, 50
             m -45, 0
