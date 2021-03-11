@@ -22,7 +22,7 @@ const ProgressCircle = (props) => {
       const clickPoint = { x: event.layerX, y: event.layerY };
       const radian = utils.getAngleRadian(referencePoint, centerPoint, clickPoint);
       const rawDegrees = radian * (180 / Math.PI)
-      const degrees = getDegrees(rawDegrees, clickPoint);
+      const degrees = utils.getDegrees(rawDegrees, clickPoint);
       const percentage = degrees / 360;
       const clickedTime = percentage * duration;
       setCurTimeAudio(clickedTime);
