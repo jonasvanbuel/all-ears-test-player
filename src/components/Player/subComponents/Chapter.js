@@ -52,11 +52,8 @@ const Chapter = ({ chapter }) => {
         setCurTimeAudio={setCurTimeAudio}
       />
 
-      <p>playing: {playing ? "true" : "false"}</p>
-      <p>duration: {utils.formatTime(Math.floor(duration))}</p>
       <p>current time: {utils.formatTime(curTime)}</p>
       <p>time remaining: {utils.formatTime(Math.floor(duration) - curTime)}</p>
-      <p>percentage: {(curTime / duration) * 100}%</p>
 
     </div>
   );

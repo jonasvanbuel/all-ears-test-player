@@ -44,7 +44,6 @@ const ProgressCircle = (props) => {
           </path>
         </g>
       </svg>
-      <p>mouseDown: {mouseDown.toString()}</p>
     </div>
   )
 }
