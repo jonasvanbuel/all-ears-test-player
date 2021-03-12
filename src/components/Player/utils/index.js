@@ -37,6 +37,15 @@ const utils = {
     } else {
       return degrees;
     }
+  },
+  formatTime: (seconds) => {
+    if (seconds) {
+      const date = new Date(null);
+      date.setSeconds(seconds);
+      return date.toISOString().substr(14, 5);
+    } else {
+      return "00:00"
+    }
   }
 }
 

@@ -3,7 +3,7 @@ const Play = (props) => {
 
   return (
     <button
-      className={`pBtn play ${playing ? "hide" : ""}`}
+      className="pBtn play"
       onClick={onClick}
     >
       PLAY

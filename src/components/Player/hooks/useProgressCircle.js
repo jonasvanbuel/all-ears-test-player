@@ -9,8 +9,6 @@ function useProgressCircle(props) {
   const timeElapsedRef = useRef();
   const [ mouseDown, setMouseDown ] = useState(false);
 
-
-
   useEffect(() => {
     // Set timeElapsedRef upon first render
     timeElapsedRef.current = utils.getTimeElapsedEl(number);
