@@ -3,41 +3,40 @@ import utils from '../utils';
 
 
 function useProgressCircle(props) {
+  // Receive useChapter functions from
   const { number, curTime, duration, setCurTimeAudio } = props;
   const circumferenceRef = useRef(2 * Math.PI * 45);
-
-  // const totalTimeRef = useRef();
   const timeElapsedRef = useRef();
   const [ mouseDown, setMouseDown ] = useState(false);
 
 
 
   useEffect(() => {
-    // totalTimeRef.current = utils.getTotalTimeEl(number);
+    // Set timeElapsedRef upon first render
     timeElapsedRef.current = utils.getTimeElapsedEl(number);
 
-    // Update mouseDown state
-    const updateMouseDownTrue = () => {
+    // Update mouseDown state handler callbacks
+    const setMouseDownTrue = () => {
       setMouseDown(true);
     }
-    const updateMouseDownFalse = () => {
+    const setMouseDownFalse = () => {
       setMouseDown(false)
     }
-    document.body.addEventListener('mousedown', updateMouseDownTrue)
-    document.body.addEventListener('touchstart', updateMouseDownTrue)
-    document.body.addEventListener('mouseup', updateMouseDownFalse)
-    document.body.addEventListener('touchend', updateMouseDownFalse)
+    document.body.addEventListener('mousedown', setMouseDownTrue)
+    document.body.addEventListener('touchstart', setMouseDownTrue)
+    document.body.addEventListener('mouseup', setMouseDownFalse)
+    document.body.addEventListener('touchend', setMouseDownFalse)
 
-
+    // Cleanup when dismount
     return () => {
-      document.body.removeEventListener('mousedown', updateMouseDownTrue)
-      document.body.removeEventListener('touchstart', updateMouseDownTrue)
-      document.body.removeEventListener('mouseup', updateMouseDownFalse)
-      document.body.removeEventListener('touchend', updateMouseDownFalse)
+      document.body.removeEventListener('mousedown', setMouseDownTrue)
+      document.body.removeEventListener('touchstart', setMouseDownTrue)
+      document.body.removeEventListener('mouseup', setMouseDownFalse)
+      document.body.removeEventListener('touchend', setMouseDownFalse)
     }
   }, [])
 
-  // Redraw stroke when curTime or Duration changes
+  // Redraw progressCircle stroke when curTime or Duration changes
   useEffect(() => {
     const strokeDasharray = () => {
       const percentage = (curTime / duration);
@@ -49,6 +48,7 @@ function useProgressCircle(props) {
     }
   }, [curTime, duration])
 
+  // Calculate 360 degrees angle and setAudio to newTime
   const updateCurTime = (clickPoint) => {
     const centerPoint = { x: 100, y: 100 };
     const referencePoint = { x: 100, y: 0 };
@@ -60,15 +60,21 @@ function useProgressCircle(props) {
     setCurTimeAudio(clickedTime);
   }
 
+  // Externalised event handlers
   const handleClick = (event) => {
-    const clickPoint = { x: event.nativeEvent.layerX, y: event.nativeEvent.layerY };
+    const clickPoint = {
+      x: event.nativeEvent.layerX,
+      y: event.nativeEvent.layerY
+    };
     updateCurTime(clickPoint);
   }
 
   const handleMouseMove = (event) => {
     if (mouseDown === true) {
-      const clickPoint = { x: event.nativeEvent.layerX, y: event.nativeEvent.layerY };
-      // console.log(clickPoint);
+      const clickPoint = {
+        x: event.nativeEvent.layerX,
+        y: event.nativeEvent.layerY
+      };
       updateCurTime(clickPoint);
     }
   }
@@ -79,7 +85,6 @@ function useProgressCircle(props) {
       x: event.targetTouches[0].clientX - boundingRect.x,
       y: event.targetTouches[0].clientY - boundingRect.y
     };
-    // console.log(clickPoint);
     updateCurTime(clickPoint);
   }
 
