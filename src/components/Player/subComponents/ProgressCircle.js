@@ -6,7 +6,7 @@ const ProgressCircle = (props) => {
   const {
     circumference,
     handleClick,
-    handleMove,
+    handleMouseMove,
     handleTouchMove,
     mouseDown
   } = useProgressCircle(props)
@@ -24,7 +24,7 @@ const ProgressCircle = (props) => {
             className="total-time"
             cx="50" cy="50" r="45"
             onClick={handleClick}
-            onMouseMove={handleMove}
+            onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
           >
           </circle>
@@ -32,7 +32,7 @@ const ProgressCircle = (props) => {
             className="time-elapsed hide"
             strokeDasharray={`${0} ${circumference}`}
             onClick={handleClick}
-            onMouseMove={handleMove}
+            onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
             d="
               M 50, 50

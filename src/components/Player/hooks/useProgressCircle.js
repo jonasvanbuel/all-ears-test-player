@@ -49,11 +49,7 @@ function useProgressCircle(props) {
     }
   }, [curTime, duration])
 
-  const updateCurTime = (event) => {
-    const clickPoint = {
-      x: event.layerX || event.nativeEvent.layerX,
-      y: event.layerY || event.nativeEvent.layerY
-    };
+  const updateCurTime = (clickPoint) => {
     const centerPoint = { x: 100, y: 100 };
     const referencePoint = { x: 100, y: 0 };
     const radian = utils.getAngleRadian(referencePoint, centerPoint, clickPoint);
@@ -65,24 +61,32 @@ function useProgressCircle(props) {
   }
 
   const handleClick = (event) => {
-    updateCurTime(event);
+    const clickPoint = { x: event.nativeEvent.layerX, y: event.nativeEvent.layerY };
+    updateCurTime(clickPoint);
   }
 
-  const handleMove = (event) => {
+  const handleMouseMove = (event) => {
     if (mouseDown === true) {
-      updateCurTime(event);
+      const clickPoint = { x: event.nativeEvent.layerX, y: event.nativeEvent.layerY };
+      // console.log(clickPoint);
+      updateCurTime(clickPoint);
     }
   }
 
   const handleTouchMove = (event) => {
-    console.log('handleTouchMove triggered...');
-    console.log(event);
+    const boundingRect = event.target.getBoundingClientRect()
+    const clickPoint = {
+      x: event.targetTouches[0].clientX - boundingRect.x,
+      y: event.targetTouches[0].clientY - boundingRect.y
+    };
+    // console.log(clickPoint);
+    updateCurTime(clickPoint);
   }
 
   return {
     circumference: circumferenceRef.current,
     handleClick,
-    handleMove,
+    handleMouseMove,
     handleTouchMove,
     mouseDown
   }
