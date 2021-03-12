@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import useProgressCircle from '../hooks/useProgressCircle';
 import './ProgressCircle.scss';
 
@@ -7,13 +6,10 @@ const ProgressCircle = (props) => {
   const {
     circumference,
     handleClick,
-    handleMouseMove,
+    handleMove,
+    handleTouchMove,
     mouseDown
   } = useProgressCircle(props)
-
-  const totalTimeRef = useRef();
-  const timeElapsedRef = useRef();
-
 
   return (
     <div>
@@ -25,19 +21,19 @@ const ProgressCircle = (props) => {
       >
         <g className="circle-container">
           <circle
-            ref={totalTimeRef}
             className="total-time"
             cx="50" cy="50" r="45"
             onClick={handleClick}
-            onMouseMove={handleMouseMove}
+            onMouseMove={handleMove}
+            onTouchMove={handleTouchMove}
           >
           </circle>
           <path
-            ref={timeElapsedRef}
             className="time-elapsed hide"
             strokeDasharray={`${0} ${circumference}`}
             onClick={handleClick}
-            onMouseMove={handleMouseMove}
+            onMouseMove={handleMove}
+            onTouchMove={handleTouchMove}
             d="
               M 50, 50
               m -45, 0

@@ -6,12 +6,14 @@ function useProgressCircle(props) {
   const { number, curTime, duration, setCurTimeAudio } = props;
   const circumferenceRef = useRef(2 * Math.PI * 45);
 
-  const totalTimeRef = useRef();
+  // const totalTimeRef = useRef();
   const timeElapsedRef = useRef();
   const [ mouseDown, setMouseDown ] = useState(false);
 
+
+
   useEffect(() => {
-    totalTimeRef.current = utils.getTotalTimeEl(number);
+    // totalTimeRef.current = utils.getTotalTimeEl(number);
     timeElapsedRef.current = utils.getTimeElapsedEl(number);
 
     // Update mouseDown state
@@ -22,10 +24,16 @@ function useProgressCircle(props) {
       setMouseDown(false)
     }
     document.body.addEventListener('mousedown', updateMouseDownTrue)
+    document.body.addEventListener('touchstart', updateMouseDownTrue)
     document.body.addEventListener('mouseup', updateMouseDownFalse)
+    document.body.addEventListener('touchend', updateMouseDownFalse)
+
+
     return () => {
       document.body.removeEventListener('mousedown', updateMouseDownTrue)
+      document.body.removeEventListener('touchstart', updateMouseDownTrue)
       document.body.removeEventListener('mouseup', updateMouseDownFalse)
+      document.body.removeEventListener('touchend', updateMouseDownFalse)
     }
   }, [])
 
@@ -60,17 +68,22 @@ function useProgressCircle(props) {
     updateCurTime(event);
   }
 
-  const handleMouseMove = (event) => {
+  const handleMove = (event) => {
     if (mouseDown === true) {
-      // console.log('handleMouseMove triggered...')
       updateCurTime(event);
     }
+  }
+
+  const handleTouchMove = (event) => {
+    console.log('handleTouchMove triggered...');
+    console.log(event);
   }
 
   return {
     circumference: circumferenceRef.current,
     handleClick,
-    handleMouseMove,
+    handleMove,
+    handleTouchMove,
     mouseDown
   }
 }
