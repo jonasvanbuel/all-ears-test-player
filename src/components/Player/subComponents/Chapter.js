@@ -1,9 +1,11 @@
 import useChapter from '../hooks/useChapter';
+import utils from '../utils';
 
 import Play from './Play';
 import Pause from './Pause';
 import Rwnd from './Rwnd';
 import Fwd from './Fwd';
+import ProgressCircle from './ProgressCircle';
 
 
 const Chapter = ({ chapter }) => {
@@ -12,6 +14,7 @@ const Chapter = ({ chapter }) => {
     playing,
     duration,
     curTime,
+    setCurTimeAudio,
     handlePlay,
     handlePause,
     handleRwnd,
@@ -32,16 +35,27 @@ const Chapter = ({ chapter }) => {
         <source src={audioSrc[1]} type="audio/mpeg" />
       </audio>
 
-      <Play playing={playing} onClick={handlePlay} />
-      <Pause playing={playing} onClick={handlePause} />
+      {playing ?
+        <Pause playing={playing} onClick={handlePause} /> :
+        <Play playing={playing} onClick={handlePlay} />
+      }
+
       <div>
         <Rwnd onClick={handleRwnd} />
         <Fwd onClick={handleFwd} />
       </div>
 
-      <p>playing: {playing === true ? "true" : "false"}</p>
-      <p>duration: {duration}</p>
-      <p>current time: {curTime}</p>
+      <ProgressCircle
+        number={number}
+        curTime={curTime}
+        duration={duration}
+        setCurTimeAudio={setCurTimeAudio}
+      />
+
+      <p>playing: {playing ? "true" : "false"}</p>
+      <p>duration: {utils.formatTime(Math.floor(duration))}</p>
+      <p>current time: {utils.formatTime(curTime)}</p>
+      <p>time remaining: {utils.formatTime(Math.floor(duration) - curTime)}</p>
       <p>percentage: {(curTime / duration) * 100}%</p>
 
     </div>

@@ -1,0 +1,36 @@
+// Local variables?
+$progress-circle-width: 200px;
+$stroke-width: 6px;
+
+$color-total-time: rgba(1, 1, 1, 0.2);
+$color-time-elapsed: yellow;
+
+.progress-circle {
+  position: relative;
+  width: $progress-circle-width;
+  height: $progress-circle-width;
+  transform: scaleX(-1);
+
+  margin: 20px 0;
+}
+
+.circle-container {
+  fill: none;
+  stroke: none;
+}
+
+.progress-circle .total-time {
+  stroke-width: $stroke-width;
+  stroke: $color-total-time;
+}
+
+.progress-circle .time-elapsed {
+  stroke: $color-time-elapsed;
+  fill-rule: nonzero;
+  stroke-width: $stroke-width + 1;
+  stroke-linecap: round;
+
+  transform: rotate(88deg);
+  transform-origin: center;
+  // transition: 1s linear all;
+}

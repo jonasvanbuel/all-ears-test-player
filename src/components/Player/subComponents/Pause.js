@@ -3,7 +3,7 @@ const Pause = (props) => {
 
   return (
     <button
-      className={`pBtn pause ${playing ? "" : "hide"}`}
+      className="pBtn pause"
       onClick={onClick}
     >
       PAUSE
