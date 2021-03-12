@@ -15,6 +15,10 @@ const utils = {
       element.classList.remove("hide");
     }
   },
+  getTotalTimeEl: (chapterNumber) => {
+    const progressCircle = document.getElementById(`ch-${chapterNumber}-progress-circle`);
+    return progressCircle.querySelector('.total-time')
+  },
   getTimeElapsedEl: (chapterNumber) => {
     const progressCircle = document.getElementById(`ch-${chapterNumber}-progress-circle`);
     return progressCircle.querySelector('.time-elapsed')
