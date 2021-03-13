@@ -1,3 +1,7 @@
+$banner-height: 16vh;
+$player-height: 76vh;
+$footer-height: 8vh;
+
 body {
   background-color: rgba(0,0,0,0.08);
   margin: 0;
@@ -20,20 +24,20 @@ body {
 header {
   background-color: white;
   width: 100%;
-  height: 16vh;
+  height: $banner-height;
 }
 
 #root-ae-player {
   width: 100%;
   flex-grow: 1;
-  max-height: 76vh;
+  max-height: $player-height;
   overflow: auto;
 }
 
 footer {
   background-color: white;
   width: 100%;
-  height: 8vh;
+  height: $footer-height;
 }
 
 // RESPONSIVE TEMPLATE
