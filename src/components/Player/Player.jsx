@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -15,23 +16,27 @@ SwiperCore.use([Navigation, Pagination]);
 const Player = () => {
   const { chapters } = usePlayer();
 
+  useEffect(() => {
+
+  }, [])
+
   return (
     <div id="player">
       <Swiper
         slidesPerView={1}
         navigation
         pagination
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
         passiveListeners={false}
         preventClicks={false}
         preventClicksPropagation={false}
+        setWrapperSize
+        simulateTouch={false}
+        threshold={50}
+        resistanceRatio={1}
       >
         {
           chapters && chapters.length > 1 ? chapters.map((chapter) => (
-            <SwiperSlide
-              style={{width: "100%"}}
-            >
+            <SwiperSlide key={chapter.number}>
               <Chapter key={chapter.number} chapter={chapter} />
             </SwiperSlide>
           )) :
