@@ -31,8 +31,8 @@ const Player = () => {
         preventClicksPropagation={false}
         setWrapperSize
         simulateTouch={false}
-        threshold={50}
-        resistanceRatio={1}
+        threshold={40}
+        resistanceRatio={0.85} //0.85 default
       >
         {
           chapters && chapters.length > 1 ? chapters.map((chapter) => (
