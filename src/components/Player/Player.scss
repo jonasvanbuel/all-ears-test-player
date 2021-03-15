@@ -17,25 +17,6 @@ $footer-height: 8vh;
   // overflow: scroll;
 }
 
-.swiper-container {
-  // background-color: green;
-
-  width: 100%;
-
-}
-
-.swiper-slide {
-  height: 100%;
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-
-
 .chapter {
   background-color: green;
 
@@ -53,6 +34,24 @@ $footer-height: 8vh;
   height: 40px;
 }
 
+
+// SWIPER
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-slide {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: yellow;
+}
 
 
 

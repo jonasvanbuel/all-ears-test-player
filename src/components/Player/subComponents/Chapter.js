@@ -21,6 +21,7 @@ const Chapter = ({ chapter }) => {
     handleFwd
   } = useChapter(chapter);
 
+
   return (
     <div id={`ch-${number}`} className="chapter">
       <p className="chapter-title">{`Chapter ${number}: ${title}`}</p>
@@ -43,6 +44,11 @@ const Chapter = ({ chapter }) => {
       <div>
         <Rwnd onClick={handleRwnd} />
         <Fwd onClick={handleFwd} />
+      </div>
+
+      <div>
+        <button className="prevBtn pBtn">prev</button>
+        <button className="nextBtn pBtn">next</button>
       </div>
 
       <ProgressCircle

@@ -1,38 +1,43 @@
-import { useEffect } from 'react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import usePlayer from './hooks/usePlayer';
+import Chapter from './subComponents/Chapter';
+import utils from './utils';
 
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-import './Player.scss';
 
-import usePlayer from './hooks/usePlayer';
-import Chapter from './subComponents/Chapter';
+import './Player.scss'
 
-// install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
+
 
 const Player = () => {
   const { chapters } = usePlayer();
 
-  useEffect(() => {
+  const handleSlideChange = (swiper) => {
+    const prevAudio = utils.getAudioEl(swiper.previousIndex + 1)
+    const curAudio = utils.getAudioEl(swiper.realIndex + 1)
 
-  }, [])
+    if (!prevAudio.paused) {
+      prevAudio.pause();
+      curAudio.play();
+    }
+  }
 
   return (
     <div id="player">
       <Swiper
         slidesPerView={1}
-        navigation
+        navigation={{
+          prevEl: '.prevBtn',
+          nextEl: '.nextBtn'
+        }}
         pagination
-        passiveListeners={false}
-        preventClicks={false}
-        preventClicksPropagation={false}
-        setWrapperSize
+        onSlideChange={handleSlideChange}
         simulateTouch={false}
-        threshold={40}
-        resistanceRatio={0.85} //0.85 default
       >
         {
           chapters && chapters.length > 1 ? chapters.map((chapter) => (
