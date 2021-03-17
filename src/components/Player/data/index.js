@@ -3,7 +3,8 @@ export const data = {
     id: 1,
     mainTitle: 'Olafur Eliasson',
     subTitle: 'In Real Life',
-    location: 'Tate Modern, London'
+    location: 'Tate Modern, London',
+    dates: ''
   },
   chapters: [
     {
