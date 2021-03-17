@@ -58,31 +58,46 @@ function useProgressCircle(props) {
     setCurTimeAudio(clickedTime);
   }
 
-  // Externalised event handlers
+
+  // TODO: Externalise any helpers to utils?
+  const getChapterOffset = (chapterNumber) => {
+    const chapterWidth = utils.getChapterEl(chapterNumber).getBoundingClientRect().width;
+    return chapterWidth * (chapterNumber - 1);
+  }
+
+  const evalClickPoint = (chapterNumber, event) => {
+    const chapterOffset = getChapterOffset(chapterNumber);
+    if (event.type === 'click' || event.type === 'mousemove') {
+      return {
+        x: event.nativeEvent.layerX + chapterOffset,
+        y: event.nativeEvent.layerY
+      }
+    }
+    if (event.type === 'touchmove') {
+      const boundingRect = event.target.getBoundingClientRect()
+      console.log(boundingRect)
+      return {
+        x: event.targetTouches[0].clientX - boundingRect.x,
+        y: event.targetTouches[0].clientY - boundingRect.y
+      }
+    }
+  }
+
+  // ProgressCircle event handlers
   const handleClick = (event) => {
-    const clickPoint = {
-      x: event.nativeEvent.layerX,
-      y: event.nativeEvent.layerY
-    };
+    const clickPoint = evalClickPoint(number, event)
     updateCurTime(clickPoint);
   }
 
   const handleMouseMove = (event) => {
     if (mouseDown === true) {
-      const clickPoint = {
-        x: event.nativeEvent.layerX,
-        y: event.nativeEvent.layerY
-      };
+      const clickPoint = evalClickPoint(number, event)
       updateCurTime(clickPoint);
     }
   }
 
   const handleTouchMove = (event) => {
-    const boundingRect = event.target.getBoundingClientRect()
-    const clickPoint = {
-      x: event.targetTouches[0].clientX - boundingRect.x,
-      y: event.targetTouches[0].clientY - boundingRect.y
-    };
+    const clickPoint = evalClickPoint(number, event)
     updateCurTime(clickPoint);
   }
 

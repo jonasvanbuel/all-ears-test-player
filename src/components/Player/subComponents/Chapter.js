@@ -21,6 +21,7 @@ const Chapter = ({ chapter }) => {
     handleFwd
   } = useChapter(chapter);
 
+
   return (
     <div id={`ch-${number}`} className="chapter">
       <p className="chapter-title">{`Chapter ${number}: ${title}`}</p>
@@ -45,6 +46,11 @@ const Chapter = ({ chapter }) => {
         <Fwd onClick={handleFwd} />
       </div>
 
+      <div>
+        <button className="prevBtn pBtn">prev</button>
+        <button className="nextBtn pBtn">next</button>
+      </div>
+
       <ProgressCircle
         number={number}
         curTime={curTime}
@@ -52,11 +58,8 @@ const Chapter = ({ chapter }) => {
         setCurTimeAudio={setCurTimeAudio}
       />
 
-      <p>playing: {playing ? "true" : "false"}</p>
-      <p>duration: {utils.formatTime(Math.floor(duration))}</p>
       <p>current time: {utils.formatTime(curTime)}</p>
       <p>time remaining: {utils.formatTime(Math.floor(duration) - curTime)}</p>
-      <p>percentage: {(curTime / duration) * 100}%</p>
 
     </div>
   );
