@@ -2,7 +2,7 @@ import useProgressCircle from '../hooks/useProgressCircle';
 import './ProgressCircle.scss';
 
 const ProgressCircle = (props) => {
-  const { number } = props;
+  const { chapterNumber } = props;
   const {
     circumference,
     handleClick,
@@ -13,7 +13,7 @@ const ProgressCircle = (props) => {
 
   return (
     <svg
-      id={`ch-${number}-progress-circle`}
+      id={`ch-${chapterNumber}-progress-circle`}
       className="progress-circle"
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"

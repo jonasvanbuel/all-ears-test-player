@@ -41,11 +41,11 @@ const Player = () => {
       >
         {
           chapters && chapters.length > 1 ? chapters.map((chapter) => (
-            <SwiperSlide key={chapter.number}>
-              <Chapter key={chapter.number} chapter={chapter} />
+            <SwiperSlide key={chapter.chapterNumber}>
+              <Chapter key={chapter.chapterNumber} chapter={chapter} />
             </SwiperSlide>
           )) :
-          <Chapter key={chapters[0].number} chapter={chapters[0]}/>
+          <Chapter key={chapters[0].chapterNumber} chapter={chapters[0]}/>
         }
       </Swiper>
     </div>

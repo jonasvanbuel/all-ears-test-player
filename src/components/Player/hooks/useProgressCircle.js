@@ -4,14 +4,14 @@ import utils from '../utils';
 
 function useProgressCircle(props) {
   // Receive useChapter functions from
-  const { number, curTime, duration, setCurTimeAudio } = props;
+  const { chapterNumber, curTime, duration, setCurTimeAudio } = props;
   const circumferenceRef = useRef(2 * Math.PI * 45);
   const timeElapsedRef = useRef();
   const [ mouseDown, setMouseDown ] = useState(false);
 
   useEffect(() => {
     // Set timeElapsedRef upon first render
-    timeElapsedRef.current = utils.getTimeElapsedEl(number);
+    timeElapsedRef.current = utils.getTimeElapsedEl(chapterNumber);
 
     // Update mouseDown state handler callbacks
     const setMouseDownTrue = () => {
@@ -85,19 +85,19 @@ function useProgressCircle(props) {
 
   // ProgressCircle event handlers
   const handleClick = (event) => {
-    const clickPoint = evalClickPoint(number, event)
+    const clickPoint = evalClickPoint(chapterNumber, event)
     updateCurTime(clickPoint);
   }
 
   const handleMouseMove = (event) => {
     if (mouseDown === true) {
-      const clickPoint = evalClickPoint(number, event)
+      const clickPoint = evalClickPoint(chapterNumber, event)
       updateCurTime(clickPoint);
     }
   }
 
   const handleTouchMove = (event) => {
-    const clickPoint = evalClickPoint(number, event)
+    const clickPoint = evalClickPoint(chapterNumber, event)
     updateCurTime(clickPoint);
   }
 

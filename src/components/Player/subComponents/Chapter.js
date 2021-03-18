@@ -9,7 +9,7 @@ import ProgressCircle from './ProgressCircle';
 
 
 const Chapter = ({ chapter }) => {
-  const { number, title, audioSrc } = chapter;
+  const { chapterNumber, title, audioSrc } = chapter;
   const {
     playing,
     duration,
@@ -23,11 +23,11 @@ const Chapter = ({ chapter }) => {
 
 
   return (
-    <div id={`ch-${number}`} className="chapter">
-      <p className="chapter-title">{`Chapter ${number}: ${title}`}</p>
+    <div id={`ch-${chapterNumber}`} className="chapter">
+      <p className="chapter-title">{`Chapter ${chapterNumber}: ${title}`}</p>
 
       <audio
-        id={`ch-${number}-audio`}
+        id={`ch-${chapterNumber}-audio`}
         className='player'
         autoPlay={false}
         preload="auto"
@@ -52,7 +52,7 @@ const Chapter = ({ chapter }) => {
       </div>
 
       <ProgressCircle
-        number={number}
+        chapterNumber={chapterNumber}
         curTime={curTime}
         duration={duration}
         setCurTimeAudio={setCurTimeAudio}
