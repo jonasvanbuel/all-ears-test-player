@@ -1,10 +1,7 @@
-$banner-height: 16vh;
-$player-height: 76vh;
-$footer-height: 8vh;
+@import './config.scss';
 
-.hide {
-  display: none;
-}
+
+
 
 #player {
   background-color: orange;

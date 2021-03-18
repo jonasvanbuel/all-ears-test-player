@@ -1,0 +1,137 @@
+@import '../components/Player/styles/config.scss';
+
+
+// STYLING INDEX.HTML ELEMENTS
+body {
+  background-color: rgba(0,0,0,0.08);
+
+  margin: 0;
+  padding: 0;
+
+  font-family: $main-font-family;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#body-container {
+  background-color: white;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  .horizontal-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+#root-ae-player {
+  width: 100%;
+  flex-grow: 1;
+  max-height: $player-height;
+  overflow: auto;
+}
+
+header {
+  // background-color: gray;
+  width: 100%;
+  height: $banner-height;
+
+  display: flex;
+  align-items: center;
+
+  color: $dark-blue;
+}
+
+footer {
+  background-color: white;
+  width: 100%;
+  height: $footer-height;
+
+  display: flex;
+  align-items: center;
+
+  color: $dark-blue;
+}
+
+.exhibition-details {
+  background-color: white;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.exhibition-title {
+  margin: 0;
+}
+
+.exhibition-location {
+  margin: 0;
+}
+
+.exhibition-dates {
+  margin: 0;
+}
+
+footer .navigation-bar {
+  display: flex;
+  justify-content: space-around;
+
+  .navigation-icon {
+    // background-color: yellow;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .fas,
+    .far {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+
+    .label {
+      font-size: 0.7rem;
+      margin: 0;
+    }
+  }
+}
+
+
+
+
+
+// RESPONSIVE TEMPLATE
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  #body-container {
+    height: 823px;
+    max-height: 90vh;
+    max-width: 411px;
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }

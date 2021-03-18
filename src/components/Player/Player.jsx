@@ -9,7 +9,7 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 
-import './Player.scss'
+import './styles/Player.scss'
 
 SwiperCore.use([Navigation, Pagination]);
 

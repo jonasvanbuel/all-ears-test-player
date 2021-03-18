@@ -1,5 +1,5 @@
 import useProgressCircle from '../hooks/useProgressCircle';
-import './ProgressCircle.scss';
+import '../styles/ProgressCircle.scss';
 
 const ProgressCircle = (props) => {
   const { chapterNumber } = props;
