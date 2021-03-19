@@ -1,0 +1,54 @@
+@import './config.scss';
+
+.chapter-mobile .controls {
+  z-index: 1;
+  height: 100%;
+
+  position: relative;
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  button.prevBtn {
+    left: 0px;
+  }
+  button.nextBtn {
+    right: 0px;
+  }
+}
+
+.chapter-mobile .play,
+.chapter-mobile .pause {
+  color: yellow;
+  fill: yellow;
+  height: 35%;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chapter-mobile .play {
+  margin-left: 10px;
+}
+
+.chapter-mobile .rwnd,
+.chapter-mobile .fwd {
+  color: yellow;
+  fill: yellow;
+  height: 32px;
+
+  position: absolute;
+  bottom: 10%;
+}
+
+.chapter-mobile .rwnd {
+  left: 25%;
+}
+.chapter-mobile .fwd {
+  transform: scaleX(-1);
+  right: 25%;
+}

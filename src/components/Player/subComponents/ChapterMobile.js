@@ -24,41 +24,50 @@ const ChapterMobile = ({ chapter }) => {
 
   return (
     <div id={`ch-${chapterNumber}`} className="chapter-mobile">
-      <div className="chapter-details">
+      <div className="top">
         <div className="horizontal-container">
-          <p className="chapter-title">{`Chapter ${chapterNumber}: ${title}`}</p>
+          <div className="chapter-details">
+            <p className="chapter-title">{`Chapter ${chapterNumber}: ${title}`}</p>
+          </div>
         </div>
       </div>
+      <div className="middle">
+        <audio
+          id={`ch-${chapterNumber}-audio`}
+          autoPlay={false}
+          preload="auto"
+        >
+          <source src={audioSrc[0]} type="audio/webm" />
+          <source src={audioSrc[1]} type="audio/mpeg" />
+        </audio>
 
-      <audio
-        id={`ch-${chapterNumber}-audio`}
-        autoPlay={false}
-        preload="auto"
-      >
-        <source src={audioSrc[0]} type="audio/webm" />
-        <source src={audioSrc[1]} type="audio/mpeg" />
-      </audio>
+        <div className="horizontal-container">
+          <div className="controls">
+            <button className="prevBtn pBtn">prev</button>
+            <div className="progress-circle-container">
+              <ProgressCircle
+                chapterNumber={chapterNumber}
+                curTime={curTime}
+                duration={duration}
+                setCurTimeAudio={setCurTimeAudio}
+              />
+              {playing ?
+                <Pause playing={playing} onClick={handlePause} /> :
+                <Play playing={playing} onClick={handlePlay} />
+              }
+            </div>
+            <button className="nextBtn pBtn">next</button>
+          </div>
 
-      <div className="controls">
-        <ProgressCircle
-          chapterNumber={chapterNumber}
-          curTime={curTime}
-          duration={duration}
-          setCurTimeAudio={setCurTimeAudio}
-        />
-        {playing ?
-          <Pause playing={playing} onClick={handlePause} /> :
-          <Play playing={playing} onClick={handlePlay} />
-        }
+        </div>
+      </div>
+      <div className="bottom">
+        <div className="timings noselect">
+          <h3 className="current-time">{utils.formatTime(curTime)}</h3>
+          <h3 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h3>
+        </div>
         <Rwnd onClick={handleRwnd} />
         <Fwd onClick={handleFwd} />
-        <button className="prevBtn pBtn">prev</button>
-        <button className="nextBtn pBtn">next</button>
-      </div>
-
-      <div className="timings noselect">
-        <h3 className="current-time">{utils.formatTime(curTime)}</h3>
-        <h3 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h3>
       </div>
     </div>
   );
