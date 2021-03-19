@@ -31,6 +31,7 @@
 .controls .play,
 .controls .pause {
   color: yellow;
+  fill: yellow;
   height: 100px;
 
   position: absolute;
@@ -43,7 +44,46 @@
   margin-left: 10px;
 }
 
+.rwnd,
+.fwd {
+  color: yellow;
+  fill: yellow;
+  height: 32px;
+
+  position: absolute;
+  bottom: 10%;
+}
+
+.rwnd {
+  left: 25%;
+}
+
+.fwd {
+  transform: scaleX(-1);
+  right: 25%;
+}
+
+// TEMP
 .pBtn {
   background-color: yellow;
   height: 40px;
 }
+
+.timings {
+  width: 100%;
+  position: absolute;
+  bottom: 20%;
+  display: flex;
+  justify-content: space-around;
+
+  z-index: 2;
+}
+
+.timings .current-time,
+.timings .time-remaining {
+  color: yellow;
+  margin: 0;
+
+}
+
+

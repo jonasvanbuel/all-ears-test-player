@@ -57,7 +57,7 @@ const Chapter = ({ chapter }) => {
         <button className="nextBtn pBtn">next</button>
       </div>
 
-      <div className="timings">
+      <div className="timings noselect">
         <h3 className="current-time">{utils.formatTime(curTime)}</h3>
         <h3 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h3>
       </div>
