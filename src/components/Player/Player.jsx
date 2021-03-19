@@ -2,7 +2,9 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import usePlayer from './hooks/usePlayer';
-import Chapter from './subComponents/Chapter';
+import ChapterMobile from './subComponents/ChapterMobile';
+// import ChapterDesktop
+
 import utils from './utils';
 
 import 'swiper/swiper.scss';
@@ -17,7 +19,23 @@ SwiperCore.use([Navigation, Pagination]);
 const Player = () => {
   const { chapters } = usePlayer();
 
-  // Breaking safari
+  // TODO Switch between render ChapterMobile or ChapterDesktop
+  const renderChapterMobile = (chapter) => {
+    return (
+      <ChapterMobile key={chapter.chapterNumber} chapter={chapter} />
+    )
+  }
+
+  const renderChapterDesktop = () => {
+
+  }
+
+  const renderResponsiveChapter = (chapter) => {
+    // Check user screenwidth
+    return renderChapterMobile(chapter)
+  }
+
+  // TODO: SAFARI BUG - ONLY USER ACTION CAN TRIGGER AUDIO PLAY - NO AUTO PLAY
   const handleSlideChange = (swiper) => {
     const prevAudio = utils.getAudioEl(swiper.previousIndex + 1)
     const curAudio = utils.getAudioEl(swiper.realIndex + 1)
@@ -43,10 +61,10 @@ const Player = () => {
         {
           chapters && chapters.length > 1 ? chapters.map((chapter) => (
             <SwiperSlide key={chapter.chapterNumber}>
-              <Chapter key={chapter.chapterNumber} chapter={chapter} />
+              {renderResponsiveChapter(chapter)}
             </SwiperSlide>
           )) :
-          <Chapter key={chapters[0].chapterNumber} chapter={chapters[0]}/>
+          renderResponsiveChapter(chapters[0])
         }
       </Swiper>
     </div>

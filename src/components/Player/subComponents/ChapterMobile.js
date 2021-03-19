@@ -7,9 +7,9 @@ import Rwnd from './Rwnd';
 import Fwd from './Fwd';
 import ProgressCircle from './ProgressCircle';
 
-import '../styles/Chapter.scss';
+import '../styles/ChapterMobile.scss';
 
-const Chapter = ({ chapter }) => {
+const ChapterMobile = ({ chapter }) => {
   const { chapterNumber, title, audioSrc } = chapter;
   const {
     playing,
@@ -22,9 +22,8 @@ const Chapter = ({ chapter }) => {
     handleFwd
   } = useChapter(chapter);
 
-
   return (
-    <div id={`ch-${chapterNumber}`} className="chapter">
+    <div id={`ch-${chapterNumber}`} className="chapter-mobile">
       <div className="chapter-details">
         <div className="horizontal-container">
           <p className="chapter-title">{`Chapter ${chapterNumber}: ${title}`}</p>
@@ -65,4 +64,4 @@ const Chapter = ({ chapter }) => {
   );
 }
 
-export default Chapter;
+export default ChapterMobile;
