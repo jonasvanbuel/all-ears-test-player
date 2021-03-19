@@ -7,6 +7,7 @@ import Rwnd from './Rwnd';
 import Fwd from './Fwd';
 import ProgressCircle from './ProgressCircle';
 
+import '../styles/Chapter.scss';
 
 const Chapter = ({ chapter }) => {
   const { chapterNumber, title, audioSrc } = chapter;
@@ -24,11 +25,14 @@ const Chapter = ({ chapter }) => {
 
   return (
     <div id={`ch-${chapterNumber}`} className="chapter">
-      <p className="chapter-title">{`Chapter ${chapterNumber}: ${title}`}</p>
+      <div className="chapter-details">
+        <div className="horizontal-container">
+          <p className="chapter-title">{`Chapter ${chapterNumber}: ${title}`}</p>
+        </div>
+      </div>
 
       <audio
         id={`ch-${chapterNumber}-audio`}
-        className='player'
         autoPlay={false}
         preload="auto"
       >
@@ -36,31 +40,27 @@ const Chapter = ({ chapter }) => {
         <source src={audioSrc[1]} type="audio/mpeg" />
       </audio>
 
-      {playing ?
-        <Pause playing={playing} onClick={handlePause} /> :
-        <Play playing={playing} onClick={handlePlay} />
-      }
-
-      <div>
+      <div className="controls">
+        <ProgressCircle
+          chapterNumber={chapterNumber}
+          curTime={curTime}
+          duration={duration}
+          setCurTimeAudio={setCurTimeAudio}
+        />
+        {playing ?
+          <Pause playing={playing} onClick={handlePause} /> :
+          <Play playing={playing} onClick={handlePlay} />
+        }
         <Rwnd onClick={handleRwnd} />
         <Fwd onClick={handleFwd} />
-      </div>
-
-      <div>
         <button className="prevBtn pBtn">prev</button>
         <button className="nextBtn pBtn">next</button>
       </div>
 
-      <ProgressCircle
-        chapterNumber={chapterNumber}
-        curTime={curTime}
-        duration={duration}
-        setCurTimeAudio={setCurTimeAudio}
-      />
-
-      <p>current time: {utils.formatTime(curTime)}</p>
-      <p>time remaining: {utils.formatTime(Math.floor(duration) - curTime)}</p>
-
+      <div className="timings">
+        <h3 className="current-time">{utils.formatTime(curTime)}</h3>
+        <h3 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h3>
+      </div>
     </div>
   );
 }

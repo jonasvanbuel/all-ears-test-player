@@ -1,8 +1,5 @@
 @import './config.scss';
 
-
-
-
 #player {
   background-color: orange;
 
@@ -11,26 +8,7 @@
   max-height: 100%;
 
   display: flex;
-  // overflow: scroll;
 }
-
-.chapter {
-  background-color: green;
-
-  height: 100%;
-  width: 100%;
-  padding: 32px 20px;
-}
-
-.chapter-title {
-  margin-top: 0px;
-}
-
-.pBtn {
-  background-color: yellow;
-  height: 40px;
-}
-
 
 // SWIPER
 .swiper-container {

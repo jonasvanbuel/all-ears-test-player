@@ -17,6 +17,7 @@ SwiperCore.use([Navigation, Pagination]);
 const Player = () => {
   const { chapters } = usePlayer();
 
+  // Breaking safari
   const handleSlideChange = (swiper) => {
     const prevAudio = utils.getAudioEl(swiper.previousIndex + 1)
     const curAudio = utils.getAudioEl(swiper.realIndex + 1)
