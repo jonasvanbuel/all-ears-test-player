@@ -32,17 +32,10 @@ body {
   }
 }
 
-#root-ae-player {
-  width: 100%;
-  flex-grow: 1;
-  max-height: $player-height;
-  overflow: auto;
-}
-
 header {
-  // background-color: gray;
   width: 100%;
-  height: $banner-height;
+  min-height: $banner-height;
+  max-height: $banner-height;
 
   display: flex;
   align-items: center;
@@ -50,10 +43,19 @@ header {
   color: $dark-blue;
 }
 
+#root-ae-player {
+  width: 100%;
+  // flex-grow: 1;
+  min-height: $player-height;
+  max-height: $player-height;
+  overflow: auto;
+}
+
 footer {
   background-color: white;
   width: 100%;
-  height: $footer-height;
+  min-height: $footer-height;
+  max-height: $footer-height;
 
   display: flex;
   align-items: center;
