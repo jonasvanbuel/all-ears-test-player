@@ -44,11 +44,12 @@ header {
 }
 
 #root-ae-player {
+  background-color: green;
   width: 100%;
-  // flex-grow: 1;
   min-height: $player-height;
   max-height: $player-height;
   overflow: auto;
+  position: relative;
 }
 
 footer {

@@ -37,13 +37,13 @@ const Player = () => {
 
   // TODO: SAFARI BUG - ONLY USER ACTION CAN TRIGGER AUDIO PLAY - NO AUTO PLAY
   const handleSlideChange = (swiper) => {
-    // const prevAudio = utils.getAudioEl(swiper.previousIndex + 1)
-    // const curAudio = utils.getAudioEl(swiper.realIndex + 1)
+    const prevAudio = utils.getAudioEl(swiper.previousIndex + 1);
+    // const curAudio = utils.getAudioEl(swiper.realIndex + 1);
 
-    // if (!prevAudio.paused) {
-    //   prevAudio.pause();
-    //   curAudio.play();
-    // }
+    if (!prevAudio.paused) {
+      prevAudio.pause();
+      // curAudio.play();
+    }
   }
 
   return (
