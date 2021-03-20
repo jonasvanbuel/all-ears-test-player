@@ -6,12 +6,11 @@ $color-time-elapsed: yellow;
 
 
 .progress-circle-container {
-  // background-color: white;
-
   height: 100%;
 }
 
 .progress-circle {
+  background-color: white;
   height: 100%;
 
   position: absolute;

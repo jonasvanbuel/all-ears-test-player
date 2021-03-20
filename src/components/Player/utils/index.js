@@ -5,6 +5,9 @@ const utils = {
   getAudioEl: (chapterNumber) => {
     return document.getElementById(`ch-${chapterNumber}-audio`);
   },
+  getProgressCircle: (chapterNumber) => {
+    return document.getElementById(`ch-${chapterNumber}-progress-circle`)
+  },
   hideEl: (element) => {
     if (!element.classList.contains("hide")) {
       element.classList.add("hide");

@@ -45,7 +45,6 @@ const ChapterMobile = ({ chapter }) => {
 
         <div className="horizontal-container">
           <div className="controls">
-            <Prev />
             <div className="progress-circle-container">
               <ProgressCircle
                 chapterNumber={chapterNumber}
@@ -58,6 +57,7 @@ const ChapterMobile = ({ chapter }) => {
                 <Play playing={playing} onClick={handlePlay} />
               }
             </div>
+            <Prev />
             <Next />
           </div>
 
