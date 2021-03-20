@@ -29,6 +29,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .chapter-mobile .play {
@@ -39,10 +40,11 @@
 .chapter-mobile .fwd {
   color: yellow;
   fill: yellow;
-  height: 32px;
+  height: 28px;
 
   position: absolute;
   bottom: 10%;
+  cursor: pointer;
 }
 
 .chapter-mobile .rwnd {
@@ -51,4 +53,25 @@
 .chapter-mobile .fwd {
   transform: scaleX(-1);
   right: 25%;
+}
+
+.chapter-mobile .prev,
+.chapter-mobile .next {
+  color: yellow;
+  fill: yellow;
+
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+
+.chapter-mobile .prev {
+  left: 0px;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.chapter-mobile .next {
+  right: 0px;
+  transform: translateY(-50%);
 }

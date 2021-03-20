@@ -51,8 +51,8 @@ const Player = () => {
       <Swiper
         slidesPerView={1}
         navigation={{
-          prevEl: '.prevBtn',
-          nextEl: '.nextBtn'
+          prevEl: '.prev',
+          nextEl: '.next'
         }}
         pagination
         onSlideChange={handleSlideChange}

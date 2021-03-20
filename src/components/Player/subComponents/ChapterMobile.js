@@ -5,6 +5,8 @@ import Play from './Play';
 import Pause from './Pause';
 import Rwnd from './Rwnd';
 import Fwd from './Fwd';
+import Next from './Next';
+import Prev from './Prev';
 import ProgressCircle from './ProgressCircle';
 
 import '../styles/ChapterMobile.scss';
@@ -43,7 +45,7 @@ const ChapterMobile = ({ chapter }) => {
 
         <div className="horizontal-container">
           <div className="controls">
-            <button className="prevBtn pBtn">prev</button>
+            <Prev />
             <div className="progress-circle-container">
               <ProgressCircle
                 chapterNumber={chapterNumber}
@@ -56,7 +58,7 @@ const ChapterMobile = ({ chapter }) => {
                 <Play playing={playing} onClick={handlePlay} />
               }
             </div>
-            <button className="nextBtn pBtn">next</button>
+            <Next />
           </div>
 
         </div>
