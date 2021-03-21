@@ -1,0 +1,68 @@
+@import './config.scss';
+
+// TEMP - TODO REMOVE
+.pBtn {
+  background-color: yellow;
+  height: 40px;
+}
+
+
+.chapter-mobile {
+  background-color: green;
+
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: 30% 40% 30%;
+}
+
+.chapter-mobile > div {
+
+}
+
+// TODO: TEMP
+.chapter-mobile .top {
+  background-color: yellow;
+}
+.chapter-mobile .middle {
+  background-color: red;
+
+  .horizontal-container {
+    height: 100%;
+
+  }
+}
+.chapter-mobile .bottom {
+  background-color: orange;
+}
+
+.chapter-mobile .chapter-details {
+  width: 100%;
+  z-index: 2;
+
+  .chapter-title {
+    margin-top: 0px;
+  }
+}
+
+
+
+.chapter-mobile .timings {
+  width: 100%;
+  position: absolute;
+  bottom: 20%;
+  display: flex;
+  justify-content: space-around;
+
+  z-index: 2;
+
+  .current-time,
+  .time-remaining {
+    color: yellow;
+    margin: 0;
+  }
+}
+
+
+

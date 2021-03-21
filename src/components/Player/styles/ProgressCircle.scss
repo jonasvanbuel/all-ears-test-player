@@ -1,17 +1,21 @@
-// Local variables?
-$progress-circle-width: 200px;
-$stroke-width: 6px;
+@import './config.scss';
 
+$stroke-width: 6px;
 $color-total-time: rgba(1, 1, 1, 0.2);
 $color-time-elapsed: yellow;
 
-.progress-circle {
-  position: relative;
-  width: $progress-circle-width;
-  height: $progress-circle-width;
-  transform: scaleX(-1);
 
-  margin: 20px 0;
+.progress-circle-container {
+  height: 100%;
+}
+
+.progress-circle {
+  // background-color: white;
+  height: 100%;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleX(-1);
 }
 
 .circle-container {

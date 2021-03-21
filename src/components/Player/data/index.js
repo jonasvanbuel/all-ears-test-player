@@ -1,26 +1,31 @@
 export const data = {
   exhibition: {
     id: 1,
-    mainTitle: 'Olafur Eliasson',
-    subTitle: 'In Real Life',
+    mainTitle: 'Bruce Nauman',
+    subTitle: '',
     location: 'Tate Modern, London',
-    dates: ''
+    dates: {
+      from: '7 October 2020',
+      until: '21 February 2021'
+    }
   },
   chapters: [
     {
       id: 1,
-      number: 1,
-      title: 'Beethoven - Piano Sonata No. 14 - 1st Movement',
+      chapterNumber: 1,
+      roomNumber: 2,
+      title: 'Early Work',
       img: '',
       audioSrc: [
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1613466275/2021-all-ears-test-player/audio/05-Piano_tps3ou.webm',
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1613495616/2021-all-ears-test-player/audio/05-Piano_nqmair.mp3'
+        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
+        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
       ]
     },
     {
       id: 2,
-      number: 2,
-      title: 'Miles Davis - Flamenco Sketches',
+      chapterNumber: 2,
+      roomNumber: 5,
+      title: 'Double Steel Cage Piece, 1974',
       img: '',
       audioSrc: [
         'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
@@ -29,8 +34,42 @@ export const data = {
     },
     {
       id: 3,
-      number: 3,
-      title: 'Miles Davis - Flamenco Sketches',
+      chapterNumber: 3,
+      roomNumber: 6,
+      title: 'Musical Chairs, 1983',
+      img: '',
+      audioSrc: [
+        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
+        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+      ]
+    },
+    {
+      id: 3,
+      chapterNumber: 4,
+      roomNumber: 9,
+      title: 'One Hundred Live and Die, 1984',
+      img: '',
+      audioSrc: [
+        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
+        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+      ]
+    },
+    {
+      id: 3,
+      chapterNumber: 5,
+      roomNumber: 11,
+      title: 'Black Marble Under Yellow Light, 1981-88',
+      img: '',
+      audioSrc: [
+        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
+        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+      ]
+    },
+    {
+      id: 3,
+      chapterNumber: 6,
+      roomNumber: 12,
+      title: 'Hanged Man, 1985',
       img: '',
       audioSrc: [
         'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',

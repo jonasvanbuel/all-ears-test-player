@@ -4,14 +4,14 @@ import utils from '../utils';
 
 function useProgressCircle(props) {
   // Receive useChapter functions from
-  const { number, curTime, duration, setCurTimeAudio } = props;
+  const { chapterNumber, curTime, duration, setCurTimeAudio } = props;
   const circumferenceRef = useRef(2 * Math.PI * 45);
   const timeElapsedRef = useRef();
   const [ mouseDown, setMouseDown ] = useState(false);
 
   useEffect(() => {
     // Set timeElapsedRef upon first render
-    timeElapsedRef.current = utils.getTimeElapsedEl(number);
+    timeElapsedRef.current = utils.getTimeElapsedEl(chapterNumber);
 
     // Update mouseDown state handler callbacks
     const setMouseDownTrue = () => {
@@ -47,10 +47,9 @@ function useProgressCircle(props) {
   }, [curTime, duration])
 
   // Calculate 360 degrees angle and setAudio to newTime
-  const updateCurTime = (clickPoint) => {
-    const centerPoint = { x: 100, y: 100 };
-    const referencePoint = { x: 100, y: 0 };
-    const radian = utils.getAngleRadian(referencePoint, centerPoint, clickPoint);
+  const updateCurTime = (points) => {
+    const { startPoint, centerPoint, clickPoint } = points;
+    const radian = utils.getAngleRadian(startPoint, centerPoint, clickPoint);
     const rawDegrees = radian * (180 / Math.PI)
     const degrees = utils.getDegrees(rawDegrees, clickPoint);
     const percentage = degrees / 360;
@@ -58,47 +57,55 @@ function useProgressCircle(props) {
     setCurTimeAudio(clickedTime);
   }
 
+  const evalPoints = (chapterNumber, event) => {
+    // const chapterOffset = getChapterOffset(chapterNumber);
+    const progressCircle = utils.getProgressCircle(chapterNumber);
+    const boundingRect = progressCircle.getBoundingClientRect();
+    const startPoint = {
+      x: boundingRect.width / 2,
+      y: 0
+    };
+    const centerPoint = {
+      x: boundingRect.width / 2,
+      y: boundingRect.height / 2
+    };
+    let clickPoint;
 
-  // TODO: Externalise any helpers to utils?
-  const getChapterOffset = (chapterNumber) => {
-    const chapterWidth = utils.getChapterEl(chapterNumber).getBoundingClientRect().width;
-    return chapterWidth * (chapterNumber - 1);
-  }
-
-  const evalClickPoint = (chapterNumber, event) => {
-    const chapterOffset = getChapterOffset(chapterNumber);
     if (event.type === 'click' || event.type === 'mousemove') {
-      return {
-        x: event.nativeEvent.layerX + chapterOffset,
-        y: event.nativeEvent.layerY
+      clickPoint = {
+        x: event.pageX - boundingRect.left || event.nativeEvent.pageX  - boundingRect.left,
+        y: event.pageY - boundingRect.top || event.nativeEvent.pageY  - boundingRect.top,
       }
     }
     if (event.type === 'touchmove') {
-      const boundingRect = event.target.getBoundingClientRect()
-      console.log(boundingRect)
-      return {
-        x: event.targetTouches[0].clientX - boundingRect.x,
-        y: event.targetTouches[0].clientY - boundingRect.y
+      clickPoint = {
+        x: event.touches[0].pageX - boundingRect.left || event.targetTouches[0].pageX - boundingRect.left,
+        y: event.touches[0].pageY - boundingRect.top || event.targetTouches[0].pageY - boundingRect.top
       }
+    }
+    return {
+      startPoint,
+      centerPoint,
+      clickPoint
     }
   }
 
   // ProgressCircle event handlers
   const handleClick = (event) => {
-    const clickPoint = evalClickPoint(number, event)
-    updateCurTime(clickPoint);
+    const points = evalPoints(chapterNumber, event)
+    updateCurTime(points);
   }
 
   const handleMouseMove = (event) => {
     if (mouseDown === true) {
-      const clickPoint = evalClickPoint(number, event)
-      updateCurTime(clickPoint);
+      const points = evalPoints(chapterNumber, event)
+      updateCurTime(points);
     }
   }
 
   const handleTouchMove = (event) => {
-    const clickPoint = evalClickPoint(number, event)
-    updateCurTime(clickPoint);
+    const points = evalPoints(chapterNumber, event)
+    updateCurTime(points);
   }
 
   return {

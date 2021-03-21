@@ -9,7 +9,7 @@ function useChapter(chapter) {
   let audioRef = useRef();
 
   useEffect(() => {
-    audioRef.current = utils.getAudioEl(chapter.number);
+    audioRef.current = utils.getAudioEl(chapter.chapterNumber);
     const audio = audioRef.current;
 
     const setPlayingTrue = () => {
