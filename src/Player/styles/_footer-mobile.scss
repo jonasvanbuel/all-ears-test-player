@@ -1,0 +1,24 @@
+footer .navigation-bar {
+  display: flex;
+  justify-content: space-around;
+
+  .navigation-icon {
+    // background-color: yellow;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .fas,
+    .far {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+
+    .label {
+      font-size: 0.7rem;
+      margin: 0;
+    }
+  }
+}

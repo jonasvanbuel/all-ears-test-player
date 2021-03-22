@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import usePlayer from './hooks/usePlayer';
 import ChapterMobile from './subComponents/ChapterMobile';
-// import ChapterDesktop
+import ChapterDesktop from './subComponents/ChapterDesktop';
 
 import utils from './utils';
 
@@ -11,7 +11,8 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 
-import './styles/Player.scss'
+import './styles/index.scss'
+import './styles/player.scss'
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -26,15 +27,22 @@ const Player = () => {
     )
   }
 
-  const renderChapterDesktop = () => {
-
+  const renderChapterDesktop = (chapter) => {
+    return (
+      <ChapterDesktop key={chapter.chapterNumber} chapter={chapter} />
+    )
   }
 
   const renderResponsiveChapter = (chapter) => {
-    // TODO Check user screenwidth and switch between mobile and desktop
-    return renderChapterMobile(chapter)
+    const isMobile = utils.mobileCheck();
+    if (isMobile) {
+      return renderChapterMobile(chapter);
+    } else {
+      return renderChapterDesktop(chapter);
+    }
   }
 
+  // EXTERNALISE
   // TODO: SAFARI BUG - ONLY USER ACTION CAN TRIGGER AUDIO PLAY - NO AUTO PLAY
   const handleSlideChange = (swiper) => {
     const prevAudio = utils.getAudioEl(swiper.previousIndex + 1);

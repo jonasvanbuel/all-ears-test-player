@@ -4,12 +4,12 @@ import 'react-app-polyfill/ie9';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import Player from './Player/Player';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Player />
   </React.StrictMode>,
-  document.getElementById('root-ae-player')
+  document.getElementById('root-player')
 );
 

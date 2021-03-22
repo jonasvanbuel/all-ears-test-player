@@ -9,7 +9,7 @@ import Next from './Next';
 import Prev from './Prev';
 import ProgressCircle from './ProgressCircle';
 
-import '../styles/ChapterMobile.scss';
+import '../styles/chapter-mobile.scss';
 
 const ChapterMobile = ({ chapter }) => {
   const { chapterNumber, title, audioSrc } = chapter;
