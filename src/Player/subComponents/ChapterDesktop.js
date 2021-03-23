@@ -25,9 +25,9 @@ const ChapterDesktop = ({ chapter }) => {
 
   return (
     <div id={`ch-${chapterNumber}`} className="chapter-desktop">
-
-
-
+      <div className="desktop-horizontal-container">
+        chapter-desktop...
+      </div>
     </div>
   );
 }

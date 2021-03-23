@@ -6,6 +6,18 @@ const utils = {
 
     return check;
   },
+  changeClassName: (oldClass, newClass) => {
+    const els = document.getElementsByClassName(oldClass);
+    console.log(els.length);
+
+    for (let i = 0; i < els.length; i++) {
+      els[i].classList.add(newClass);
+      console.log('loop triggered...')
+    }
+    for (let i = 0; i < els.length; i++) {
+      els[i].classList.remove(oldClass);
+    }
+  },
   getChapterEl: (chapterNumber) => {
     return document.getElementById(`ch-${chapterNumber}`);
   },

@@ -1,4 +1,5 @@
 import useProgressCircle from '../hooks/useProgressCircle';
+
 import '../styles/progress-circle.scss';
 
 const ProgressCircle = (props) => {

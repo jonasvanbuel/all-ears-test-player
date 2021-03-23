@@ -27,7 +27,7 @@ const ChapterMobile = ({ chapter }) => {
   return (
     <div id={`ch-${chapterNumber}`} className="chapter-mobile">
       <div className="top">
-        <div className="horizontal-container">
+        <div className="mobile-horizontal-container">
           <div className="chapter-details">
             <p className="chapter-title">{`Chapter ${chapterNumber}: ${title}`}</p>
           </div>
@@ -43,7 +43,7 @@ const ChapterMobile = ({ chapter }) => {
           <source src={audioSrc[1]} type="audio/mpeg" />
         </audio>
 
-        <div className="horizontal-container">
+        <div className="mobile-horizontal-container">
           <div className="controls">
             <div className="progress-circle-container">
               <ProgressCircle

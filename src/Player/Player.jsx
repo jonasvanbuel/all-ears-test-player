@@ -55,7 +55,7 @@ const Player = () => {
   }
 
   return (
-    <div id="player">
+    <div className={utils.mobileCheck() ? "mobile-player player" : "desktop-player player"}>
       <Swiper
         slidesPerView={1}
         navigation={{
