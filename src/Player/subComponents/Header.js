@@ -1,6 +1,6 @@
-import utils from './Player/utils';
+import utils from '../utils';
 
-import './Player/styles/header.scss'
+import '../styles/header.scss'
 
 const Header = () => {
   return (

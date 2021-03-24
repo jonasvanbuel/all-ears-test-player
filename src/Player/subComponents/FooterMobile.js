@@ -1,4 +1,4 @@
-import './Player/styles/footer-mobile.scss';
+import '../styles/footer-mobile.scss';
 
 
 const FooterMobile = () => {

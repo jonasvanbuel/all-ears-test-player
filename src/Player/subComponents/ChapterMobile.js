@@ -1,6 +1,7 @@
 import useChapter from '../hooks/useChapter';
 import utils from '../utils';
 
+import Audio from './Audio';
 import Play from './Play';
 import Pause from './Pause';
 import Rwnd from './Rwnd';
@@ -12,7 +13,7 @@ import ProgressCircle from './ProgressCircle';
 import '../styles/chapter-mobile.scss';
 
 const ChapterMobile = ({ chapter }) => {
-  const { chapterNumber, title, audioSrc } = chapter;
+  const { chapterNumber, title, audioSources } = chapter;
   const {
     playing,
     duration,
@@ -29,19 +30,13 @@ const ChapterMobile = ({ chapter }) => {
       <div className="top">
         <div className="mobile-horizontal-container">
           <div className="chapter-details">
-            <p className="chapter-title">{`Chapter ${chapterNumber}: ${title}`}</p>
+            <p className="chapter-title">{`Chapter ${chapterNumber}:`}</p>
+            <p className="chapter-title">{title}</p>
           </div>
         </div>
       </div>
       <div className="middle">
-        <audio
-          id={`ch-${chapterNumber}-audio`}
-          autoPlay={false}
-          preload="auto"
-        >
-          <source src={audioSrc[0]} type="audio/webm" />
-          <source src={audioSrc[1]} type="audio/mpeg" />
-        </audio>
+        <Audio chapterNumber={chapterNumber} audioSources={audioSources} />
 
         <div className="mobile-horizontal-container">
           <div className="controls">

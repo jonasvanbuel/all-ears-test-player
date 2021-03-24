@@ -16,9 +16,15 @@ export const data = {
       roomNumber: 2,
       title: 'Early Work',
       img: '',
-      audioSrc: [
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+      audioSources: [
+        {
+          type: 'webm',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm'
+        },
+        {
+          type: 'mpeg',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+        }
       ]
     },
     {
@@ -27,9 +33,15 @@ export const data = {
       roomNumber: 5,
       title: 'Double Steel Cage Piece, 1974',
       img: '',
-      audioSrc: [
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+      audioSources: [
+        {
+          type: 'webm',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm'
+        },
+        {
+          type: 'mpeg',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+        }
       ]
     },
     {
@@ -38,9 +50,15 @@ export const data = {
       roomNumber: 6,
       title: 'Musical Chairs, 1983',
       img: '',
-      audioSrc: [
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+      audioSources: [
+        {
+          type: 'webm',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm'
+        },
+        {
+          type: 'mpeg',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+        }
       ]
     },
     {
@@ -49,9 +67,15 @@ export const data = {
       roomNumber: 9,
       title: 'One Hundred Live and Die, 1984',
       img: '',
-      audioSrc: [
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+      audioSources: [
+        {
+          type: 'webm',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm'
+        },
+        {
+          type: 'mpeg',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+        }
       ]
     },
     {
@@ -60,9 +84,15 @@ export const data = {
       roomNumber: 11,
       title: 'Black Marble Under Yellow Light, 1981-88',
       img: '',
-      audioSrc: [
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+      audioSources: [
+        {
+          type: 'webm',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm'
+        },
+        {
+          type: 'mpeg',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+        }
       ]
     },
     {
@@ -71,9 +101,15 @@ export const data = {
       roomNumber: 12,
       title: 'Hanged Man, 1985',
       img: '',
-      audioSrc: [
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm',
-        'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+      audioSources: [
+        {
+          type: 'webm',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623913/2021-all-ears-test-player/audio/Miles_uitqur.webm'
+        },
+        {
+          type: 'mpeg',
+          src: 'https://res.cloudinary.com/deo4sjfc8/video/upload/v1614623816/2021-all-ears-test-player/audio/Miles_bgr9sx.mp3'
+        }
       ]
     }
   ]

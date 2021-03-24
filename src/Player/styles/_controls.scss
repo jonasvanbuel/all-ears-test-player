@@ -1,5 +1,6 @@
 @import './config.scss';
 
+
 .chapter-mobile .controls {
   z-index: 1;
   height: 100%;
@@ -19,22 +20,10 @@
   }
 }
 
-.chapter-mobile .play,
-.chapter-mobile .pause {
-  color: yellow;
-  fill: yellow;
-  height: 35%;
 
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
 
-.chapter-mobile .play {
-  margin-left: 10px;
-}
+
+
 
 .chapter-mobile .rwnd,
 .chapter-mobile .fwd {
@@ -55,23 +44,4 @@
   right: 25%;
 }
 
-.chapter-mobile .prev,
-.chapter-mobile .next {
-  color: yellow;
-  fill: yellow;
 
-  height: 32px;
-  position: absolute;
-  top: 50%;
-  cursor: pointer;
-}
-
-.chapter-mobile .prev {
-  left: 0px;
-  transform: translateY(-50%) scaleX(-1);
-}
-
-.chapter-mobile .next {
-  right: 0px;
-  transform: translateY(-50%);
-}
