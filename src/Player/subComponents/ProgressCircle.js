@@ -9,7 +9,6 @@ const ProgressCircle = (props) => {
     handleClick,
     handleMouseMove,
     handleTouchMove,
-    mouseDown
   } = useProgressCircle(props)
 
   return (

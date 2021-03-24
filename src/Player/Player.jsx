@@ -62,7 +62,9 @@ const Player = () => {
           prevEl: '.prev',
           nextEl: '.next'
         }}
-        pagination
+        pagination={{
+          clickable: true
+        }}
         onSlideChange={handleSlideChange}
         simulateTouch={false}
       >
