@@ -1,5 +1,35 @@
 .chapter-desktop .progress-bar {
-  background-color: green;
   height: 24px;
+  width: 100%;
   margin: 1rem 0;
+
+  position: relative;
+
+  .total-time,
+  .time-elapsed {
+    height: 0.4rem;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .total-time {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+
+    z-index: 1;
+
+    cursor: pointer;
+  }
+
+  .time-elapsed {
+    background-color: blue;
+
+    left: 0%;
+
+    z-index: 2;
+
+    cursor: pointer;
+  }
 }

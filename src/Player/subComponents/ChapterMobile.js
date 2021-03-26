@@ -35,9 +35,9 @@ const ChapterMobile = ({ chapter }) => {
           </div>
         </div>
       </div>
+
       <div className="middle">
         <Audio chapterNumber={chapterNumber} audioSources={audioSources} />
-
         <div className="mobile-horizontal-container">
           <div className="controls">
             <div className="progress-circle-container">
@@ -55,9 +55,9 @@ const ChapterMobile = ({ chapter }) => {
             <Prev />
             <Next />
           </div>
-
         </div>
       </div>
+
       <div className="bottom">
         <div className="timings noselect">
           <h3 className="current-time">{utils.formatTime(curTime)}</h3>

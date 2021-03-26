@@ -37,12 +37,12 @@ const utils = {
       element.classList.remove("hide");
     }
   },
-  getTotalTimeEl: (chapterNumber) => {
-    const progressCircle = document.getElementById(`ch-${chapterNumber}-progress-circle`);
+  getTotalTimeEl: (playerType, chapterNumber) => {
+    const progressCircle = document.getElementById(`ch-${chapterNumber}-progress-${playerType}`);
     return progressCircle.querySelector('.total-time')
   },
-  getTimeElapsedEl: (chapterNumber) => {
-    const progressCircle = document.getElementById(`ch-${chapterNumber}-progress-circle`);
+  getTimeElapsedEl: (playerType, chapterNumber) => {
+    const progressCircle = document.getElementById(`ch-${chapterNumber}-progress-${playerType}`);
     return progressCircle.querySelector('.time-elapsed')
   },
   getAngleRadian: (p0, p1, p2) => {

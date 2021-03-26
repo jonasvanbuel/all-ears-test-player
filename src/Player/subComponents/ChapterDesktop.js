@@ -47,7 +47,12 @@ const ChapterDesktop = ({ chapter }) => {
               <p className="chapter-title">{title}</p>
             </div>
           </div>
-          <ProgressBar />
+          <ProgressBar
+            chapterNumber={chapterNumber}
+            curTime={curTime}
+            duration={duration}
+            setCurTimeAudio={setCurTimeAudio}
+          />
           <div className="timings noselect">
             <h3 className="current-time">{utils.formatTime(curTime)}</h3>
             <h3 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h3>
