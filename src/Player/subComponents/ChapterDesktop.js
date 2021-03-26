@@ -14,7 +14,7 @@ import Socials from './Socials';
 import '../styles/chapter-desktop.scss';
 
 const ChapterDesktop = ({ chapter }) => {
-  const { chapterNumber, title, audioSources } = chapter;
+  const { chapterNumber, title, audioSources, imgSources } = chapter;
   const {
     playing,
     duration,
@@ -27,7 +27,11 @@ const ChapterDesktop = ({ chapter }) => {
   } = useChapter(chapter);
 
   return (
-    <div id={`ch-${chapterNumber}`} className="chapter-desktop">
+    <div
+      id={`ch-${chapterNumber}`}
+      className="chapter-desktop"
+      style={{backgroundImage: 'url(' + imgSources.desktop + ')'}}
+    >
       <div className="desktop-horizontal-container">
         <Audio
           chapterNumber={chapterNumber}

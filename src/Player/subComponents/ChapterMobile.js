@@ -13,7 +13,7 @@ import ProgressCircle from './ProgressCircle';
 import '../styles/chapter-mobile.scss';
 
 const ChapterMobile = ({ chapter }) => {
-  const { chapterNumber, title, audioSources } = chapter;
+  const { chapterNumber, title, audioSources, imgSources } = chapter;
   const {
     playing,
     duration,
@@ -25,8 +25,13 @@ const ChapterMobile = ({ chapter }) => {
     handleFwd
   } = useChapter(chapter);
 
+
   return (
-    <div id={`ch-${chapterNumber}`} className="chapter-mobile">
+    <div
+      id={`ch-${chapterNumber}`}
+      className="chapter-mobile"
+      style={{backgroundImage: 'url(' + imgSources.mobile + ')'}}
+    >
       <div className="top">
         <div className="mobile-horizontal-container">
           <div className="chapter-details">

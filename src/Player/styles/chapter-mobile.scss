@@ -2,13 +2,14 @@
 
 
 .chapter-mobile {
-  background-color: green;
-
   height: 100%;
   width: 100%;
 
   display: grid;
   grid-template-rows: 30% 40% 30%;
+
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .chapter-mobile > div {
@@ -17,10 +18,10 @@
 
 // TODO: TEMP
 .chapter-mobile .top {
-  background-color: yellow;
+  // background-color: yellow;
 }
 .chapter-mobile .middle {
-  background-color: red;
+  // background-color: red;
 
   .mobile-horizontal-container {
     height: 100%;
@@ -28,7 +29,7 @@
   }
 }
 .chapter-mobile .bottom {
-  background-color: orange;
+  // background-color: orange;
 }
 
 .chapter-mobile .chapter-details {
