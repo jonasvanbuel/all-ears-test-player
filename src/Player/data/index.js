@@ -15,7 +15,10 @@ export const data = {
       chapterNumber: 1,
       roomNumber: 2,
       title: 'Early Work',
-      img: '',
+      img: {
+        mobile: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782536/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-01-mobile_jmrkcm.jpg',
+        desktop: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782537/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-01-desktop_dlawwk.jpg'
+      },
       audioSources: [
         {
           type: 'webm',
@@ -32,7 +35,10 @@ export const data = {
       chapterNumber: 2,
       roomNumber: 5,
       title: 'Double Steel Cage Piece, 1974',
-      img: '',
+      img: {
+        mobile: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782537/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-02-mobile_ntqkcm.jpg',
+        desktop: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782537/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-02-desktop_ke9isc.jpg'
+      },
       audioSources: [
         {
           type: 'webm',
@@ -49,7 +55,10 @@ export const data = {
       chapterNumber: 3,
       roomNumber: 6,
       title: 'Musical Chairs, 1983',
-      img: '',
+      img: {
+        mobile: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782537/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-03-mobile_l43g3j.jpg',
+        desktop: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782536/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-03-desktop_jdfjiw.jpg'
+      },
       audioSources: [
         {
           type: 'webm',
@@ -66,7 +75,10 @@ export const data = {
       chapterNumber: 4,
       roomNumber: 9,
       title: 'One Hundred Live and Die, 1984',
-      img: '',
+      img: {
+        mobile: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782538/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-04-mobile_kvsuvl.jpg',
+        desktop: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782537/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-04-desktop_no7yu5.jpg'
+      },
       audioSources: [
         {
           type: 'webm',
@@ -83,7 +95,10 @@ export const data = {
       chapterNumber: 5,
       roomNumber: 11,
       title: 'Black Marble Under Yellow Light, 1981-88',
-      img: '',
+      img: {
+        mobile: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782538/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-05-mobile_nloodt.jpg',
+        desktop: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782538/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-05-desktop_pvpkca.jpg'
+      },
       audioSources: [
         {
           type: 'webm',
@@ -100,7 +115,10 @@ export const data = {
       chapterNumber: 6,
       roomNumber: 12,
       title: 'Hanged Man, 1985',
-      img: '',
+      img: {
+        mobile: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782539/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-06-mobile_wks7hu.jpg',
+        desktop: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782539/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-06-desktop_nvvfv8.jpg'
+      },
       audioSources: [
         {
           type: 'webm',
