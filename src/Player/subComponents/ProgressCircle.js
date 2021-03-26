@@ -1,5 +1,6 @@
 import useProgressCircle from '../hooks/useProgressCircle';
-import '../styles/ProgressCircle.scss';
+
+import '../styles/progress-circle.scss';
 
 const ProgressCircle = (props) => {
   const { chapterNumber } = props;
@@ -8,7 +9,6 @@ const ProgressCircle = (props) => {
     handleClick,
     handleMouseMove,
     handleTouchMove,
-    mouseDown
   } = useProgressCircle(props)
 
   return (

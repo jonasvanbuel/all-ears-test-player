@@ -10,6 +10,6 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root-ae-player')
+  document.getElementById('root-app')
 );
 

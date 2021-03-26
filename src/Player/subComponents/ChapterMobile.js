@@ -1,6 +1,7 @@
 import useChapter from '../hooks/useChapter';
 import utils from '../utils';
 
+import Audio from './Audio';
 import Play from './Play';
 import Pause from './Pause';
 import Rwnd from './Rwnd';
@@ -9,10 +10,10 @@ import Next from './Next';
 import Prev from './Prev';
 import ProgressCircle from './ProgressCircle';
 
-import '../styles/ChapterMobile.scss';
+import '../styles/chapter-mobile.scss';
 
 const ChapterMobile = ({ chapter }) => {
-  const { chapterNumber, title, audioSrc } = chapter;
+  const { chapterNumber, title, audioSources } = chapter;
   const {
     playing,
     duration,
@@ -27,23 +28,17 @@ const ChapterMobile = ({ chapter }) => {
   return (
     <div id={`ch-${chapterNumber}`} className="chapter-mobile">
       <div className="top">
-        <div className="horizontal-container">
+        <div className="mobile-horizontal-container">
           <div className="chapter-details">
-            <p className="chapter-title">{`Chapter ${chapterNumber}: ${title}`}</p>
+            <p className="chapter-title">{`Chapter ${chapterNumber}:`}</p>
+            <p className="chapter-title">{title}</p>
           </div>
         </div>
       </div>
-      <div className="middle">
-        <audio
-          id={`ch-${chapterNumber}-audio`}
-          autoPlay={false}
-          preload="auto"
-        >
-          <source src={audioSrc[0]} type="audio/webm" />
-          <source src={audioSrc[1]} type="audio/mpeg" />
-        </audio>
 
-        <div className="horizontal-container">
+      <div className="middle">
+        <Audio chapterNumber={chapterNumber} audioSources={audioSources} />
+        <div className="mobile-horizontal-container">
           <div className="controls">
             <div className="progress-circle-container">
               <ProgressCircle
@@ -60,9 +55,9 @@ const ChapterMobile = ({ chapter }) => {
             <Prev />
             <Next />
           </div>
-
         </div>
       </div>
+
       <div className="bottom">
         <div className="timings noselect">
           <h3 className="current-time">{utils.formatTime(curTime)}</h3>

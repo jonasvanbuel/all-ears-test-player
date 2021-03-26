@@ -1,0 +1,36 @@
+@import './config.scss';
+
+.footer-mobile {
+  height: $mobile-footer-height;
+
+  display: flex;
+  align-items: center;
+}
+
+.footer-mobile .navigation-bar {
+  background-color: white;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+
+  .navigation-icon {
+    // background-color: yellow;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .fas,
+    .far {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .label {
+      font-size: 0.6rem;
+      margin: 0;
+    }
+  }
+}

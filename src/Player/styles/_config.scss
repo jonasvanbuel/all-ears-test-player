@@ -4,9 +4,14 @@
 $main-font-family: 'Montserrat', sans-serif;
 
 // Sizes
-$banner-height: 16%;
-$player-height: 76%;
-$footer-height: 8%;
+$mobile-header-height: 16vh;
+$mobile-player-height: 76vh;
+$mobile-footer-height: 8vh;
+
+$desktop-header-height: 200px;
+$desktop-player-height: calc(100vh - 200px);
+$desktop-footer-height: 400px;
+
 $progress-circle-height: 45%;
 
 // Paddings and margins
@@ -16,3 +21,6 @@ $small-padding: 24px;
 
 // Colors
 $dark-blue: #050F38;
+
+
+

@@ -1,14 +1,28 @@
-import React from 'react';
-import './index.scss';
+import Player from './Player/Player';
+import Header from './Player/subComponents/Header';
+import FooterMobile from './Player/subComponents/FooterMobile';
 
-import { PlayerProvider } from './components/Player/context/PlayerContext.js';
 
-import Player from './components/Player/Player';
+import utils from './Player/utils'
+
+import './Player/styles/app.scss'
+
 
 const App = () => {
+  const renderResponsiveFooter = () => {
+    const isMobile = utils.mobileCheck();
+    if (isMobile) {
+      return <FooterMobile />;
+    }
+  }
+
   return (
-    <Player />
-  );
+    <div id={utils.mobileCheck() ? "mobile-app" : "desktop-app"} className="app">
+      <Header />
+      <Player />
+      {renderResponsiveFooter()}
+    </div>
+  )
 }
 
 export default App;

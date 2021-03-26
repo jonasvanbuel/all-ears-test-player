@@ -1,11 +1,5 @@
 @import './config.scss';
 
-// TEMP - TODO REMOVE
-.pBtn {
-  background-color: yellow;
-  height: 40px;
-}
-
 
 .chapter-mobile {
   background-color: green;
@@ -28,7 +22,7 @@
 .chapter-mobile .middle {
   background-color: red;
 
-  .horizontal-container {
+  .mobile-horizontal-container {
     height: 100%;
 
   }

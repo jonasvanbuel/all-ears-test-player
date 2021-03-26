@@ -11,7 +11,7 @@ function useProgressCircle(props) {
 
   useEffect(() => {
     // Set timeElapsedRef upon first render
-    timeElapsedRef.current = utils.getTimeElapsedEl(chapterNumber);
+    timeElapsedRef.current = utils.getTimeElapsedEl("circle", chapterNumber);
 
     // Update mouseDown state handler callbacks
     const setMouseDownTrue = () => {
