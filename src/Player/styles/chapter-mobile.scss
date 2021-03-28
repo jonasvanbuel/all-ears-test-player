@@ -12,25 +12,10 @@
   background-size: cover;
 }
 
-.chapter-mobile > div {
-
-}
-
-// TODO: TEMP
-.chapter-mobile .top {
-  // background-color: yellow;
-}
-.chapter-mobile .middle {
-  // background-color: red;
-
-  .mobile-horizontal-container {
+.chapter-mobile .middle .mobile-horizontal-container {
     height: 100%;
+}
 
-  }
-}
-.chapter-mobile .bottom {
-  // background-color: orange;
-}
 
 .chapter-mobile .chapter-details {
   width: 100%;
@@ -42,7 +27,7 @@
 }
 
 
-
+// Externalise
 .chapter-mobile .timings {
   width: 100%;
   position: absolute;
@@ -54,7 +39,7 @@
 
   .current-time,
   .time-remaining {
-    color: yellow;
+    color: $bright-green;
     margin: 0;
   }
 }

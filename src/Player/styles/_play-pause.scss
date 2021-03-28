@@ -1,7 +1,9 @@
+@import './config.scss';
+
 .chapter-mobile .play,
 .chapter-mobile .pause {
-  color: yellow;
-  fill: yellow;
+  color: $bright-green;
+  fill: $bright-green;
   height: 35%;
 
   position: absolute;

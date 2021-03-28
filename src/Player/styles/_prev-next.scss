@@ -1,7 +1,10 @@
+@import './config.scss';
+
+
 .prev,
 .next {
-  color: black;
-  fill: black;
+  color: $bright-green;
+  fill: $bright-green;
 
   position: absolute;
   top: 50%;

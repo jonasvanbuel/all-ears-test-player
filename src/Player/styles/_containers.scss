@@ -1,11 +1,11 @@
 // Fallback
 .horizontal-container {
-  width: 90%;
+  width: calc(100% - 2rem);
   margin: 0 auto;
 }
 
 .mobile-horizontal-container {
-  width: 90%;
+  width: calc(100% - 2rem);
   margin: 0 auto;
 }
 

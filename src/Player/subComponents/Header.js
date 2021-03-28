@@ -1,17 +1,31 @@
 import utils from '../utils';
+import LogoButton from './LogoButton';
+import '../styles/header.scss';
 
-import '../styles/header.scss'
+const Header = ({ exhibition }) => {
 
-const Header = () => {
   return (
-    <header className={`${utils.mobileCheck() ? "mobile-header" : "desktop-header"} noselect`}>
+    <header className={`${utils.mobileCheck() ? "mobile-header" : "desktop-header"}`}>
       <div className="horizontal-container">
+
         <div className="exhibition-details">
-          <h1 className="exhibition-title">Bruce Nauman</h1>
-          <h5 className="exhibition-location">Tate Modern, London</h5>
-          <h5 className="exhibition-dates">until 21 February 2021</h5>
+
+          <h1 className="exhibition-title noselect">{exhibition.mainTitle}</h1>
+
+          <div className="exhibition-location">
+            <i className="fas fa-map-marker noselect"></i>
+            <a href={exhibition.locationUrl} target="_blank">
+              <h5 className="noselect">{exhibition.location}</h5>
+            </a>
+          </div>
+
+          <div className="exhibition-dates noselect">
+            <i className="fas fa-clock"></i>
+            <h5>{`${exhibition.dates.from} to ${exhibition.dates.to}`}</h5>
+          </div>
         </div>
-        <div className="logo-button"></div>
+
+        <LogoButton />
       </div>
     </header>
   )

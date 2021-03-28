@@ -4,9 +4,10 @@ export const data = {
     mainTitle: 'Bruce Nauman',
     subTitle: '',
     location: 'Tate Modern, London',
+    locationUrl: 'https://www.tate.org.uk/whats-on/tate-modern/exhibition/bruce-nauman',
     dates: {
-      from: '7 October 2020',
-      until: '21 February 2021'
+      from: '7 October',
+      to: '21 February 2021'
     }
   },
   chapters: [

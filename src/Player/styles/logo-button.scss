@@ -1,10 +1,14 @@
 @import './config.scss';
-@import './containers.scss';
-@import './swiper.scss';
 
-@import './controls.scss';
-@import './prev-next.scss';
-@import './play-pause.scss';
+.logo-button {
+  height: 100%;
+
+  position: absolute;
+  right: 1.5rem;
+  top: 15%;
+
+  z-index: 5;
+}
 
 
 // RESPONSIVE TEMPLATE
@@ -26,4 +30,3 @@
 // Extra large devices (large desktops, 1200px and up)
 // @media (min-width: 1200px) {
 // }
-

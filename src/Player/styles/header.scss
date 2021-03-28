@@ -4,20 +4,14 @@ header {
   width: 100%;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+
+  position: relative;
 }
 
 .mobile-header {
   height: $mobile-header-height;
 }
-
-.desktop-header {
-  height: $desktop-header-height;
-}
-
-
-
-
 
 .exhibition-details {
   background-color: white;
@@ -25,16 +19,39 @@ header {
 
   display: flex;
   flex-direction: column;
+
+  padding-bottom: 0.5rem;
+
+  .exhibition-title {
+    margin-bottom: 6px;
+  }
+
+  .exhibition-location,
+  .exhibition-dates {
+    display: flex;
+  }
+
+  .exhibition-dates {
+    margin-top: 4px;
+  }
 }
 
-.exhibition-title {
-  margin: 0;
+
+
+
+
+
+.desktop-header {
+  height: $desktop-header-height;
 }
 
-.exhibition-location {
-  margin: 0;
+.fas {
+  width: 1rem;
+  font-size: $medium-font-size;
 }
 
-.exhibition-dates {
-  margin: 0;
+.fa-clock {
+  font-size: $small-font-size;
+  position: relative;
+  top: 0.1rem;
 }
