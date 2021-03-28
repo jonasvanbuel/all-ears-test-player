@@ -9,6 +9,7 @@ import Fwd from './Fwd';
 import Next from './Next';
 import Prev from './Prev';
 import ProgressCircle from './ProgressCircle';
+import Socials from './Socials';
 
 import '../styles/chapter-mobile.scss';
 
@@ -33,10 +34,11 @@ const ChapterMobile = ({ chapter }) => {
       style={{backgroundImage: 'url(' + imgSources.mobile + ')'}}
     >
       <div className="top">
-        <div className="mobile-horizontal-container">
-          <div className="chapter-details">
-            <p className="chapter-title">{`Chapter ${chapterNumber}:`}</p>
-            <p className="chapter-title">{title}</p>
+        <div className="chapter-details">
+          <div className="mobile-horizontal-container">
+            <h3 className="chapter-number">{`Chapter ${chapterNumber}:`}</h3>
+            <h3 className="chapter-title">{title}</h3>
+            <Socials />
           </div>
         </div>
       </div>
