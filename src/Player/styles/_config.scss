@@ -39,6 +39,7 @@ body {
   padding: 0;
   font-family: $main-font-family;
   color: $dark-blue;
+  overscroll-behavior: contain;
 }
 
 h1 {
