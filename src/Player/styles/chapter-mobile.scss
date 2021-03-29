@@ -18,7 +18,10 @@
 
 
 .chapter-mobile .chapter-details {
-  background: linear-gradient(80deg, rgba(0, 0, 0, 0.5) 10%, rgba(255, 255, 255, 0) 85%);;
+  background: linear-gradient(80deg, rgba(0, 0, 0, 0.4) 10%, rgba(255, 255, 255, 0) 85%);;
+  // backdrop-filter: blur( 3.0px );
+  //   -webkit-backdrop-filter: blur( 3.0px );
+
   width: 100%;
 
   padding-top: 0.5rem;

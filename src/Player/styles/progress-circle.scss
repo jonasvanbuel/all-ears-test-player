@@ -2,7 +2,7 @@
 
 $stroke-width: 6px;
 $color-total-time: rgba(1, 1, 1, 0.2);
-$color-time-elapsed: yellow;
+$color-time-elapsed: $bright-green;
 
 
 .progress-circle-container {
@@ -37,4 +37,9 @@ $color-time-elapsed: yellow;
   transform: rotate(88deg);
   transform-origin: center;
   // transition: 1s linear all;
+}
+
+.progress-circle .button-background {
+  transform: rotate(-120deg);
+  transform-origin: 50% 50%;
 }

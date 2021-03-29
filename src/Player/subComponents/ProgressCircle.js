@@ -11,6 +11,27 @@ const ProgressCircle = (props) => {
     handleTouchMove,
   } = useProgressCircle(props)
 
+  const tempArchive = () => {
+    return (
+      <div>
+        <clipPath id="clip">
+          <circle cx="50" cy="50" r="45"></circle>
+        </clipPath>
+        <filter id="blur" width="160%" height="160%" x="-30%" y="-30%">
+          <feFlood flood-color="#fff" result="neutral"/>
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blurred" />
+          <feMerge>
+            <feMergeNode in="neutral" />
+            <feMergeNode in="blurred" />
+          </feMerge>
+        </filter>
+        <g style={{clipPath: 'url(#clip)'}}>
+          <use style={{filter: 'url(#blur)'}}></use>
+        </g>
+      </div>
+    )
+  }
+
   return (
     <svg
       id={`ch-${chapterNumber}-progress-circle`}
@@ -18,7 +39,25 @@ const ProgressCircle = (props) => {
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g className="circle-container">
+      <defs>
+        <linearGradient id="linear-gradient">
+          <stop offset="15%"  stop-color="#000000" stop-opacity="0.6" />
+          <stop offset="85%" stop-color="#000000" stop-opacity="0.2"/>
+        </linearGradient>
+        <radialGradient id="radial-gradient">
+          <stop offset="40%" stop-color="#040E3B" stop-opacity="0.8" />
+          <stop offset="70%" stop-color="#040E3B" stop-opacity="0.7" />
+          <stop offset="100%" stop-color="#040E3B" stop-opacity="0.3" />
+        </radialGradient>
+      </defs>
+
+      <g className="circle-container swiper-no-swiping">
+        <circle
+          className="button-background"
+          cx="50" cy="50" r="48"
+          fill="url(#linear-gradient)"
+        >
+        </circle>
         <circle
           className="total-time"
           cx="50" cy="50" r="45"
