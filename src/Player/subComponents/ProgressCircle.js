@@ -41,8 +41,8 @@ const ProgressCircle = (props) => {
     >
       <defs>
         <linearGradient id="linear-gradient">
-          <stop offset="15%"  stop-color="#000000" stop-opacity="0.6" />
-          <stop offset="85%" stop-color="#000000" stop-opacity="0.2"/>
+          <stop offset="15%"  stop-color="#FFFFFF" stop-opacity="0.45" />
+          <stop offset="85%" stop-color="#FFFFFF" stop-opacity="0.25"/>
         </linearGradient>
         <radialGradient id="radial-gradient">
           <stop offset="40%" stop-color="#040E3B" stop-opacity="0.8" />
