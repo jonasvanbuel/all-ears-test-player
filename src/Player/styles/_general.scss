@@ -1,0 +1,48 @@
+@import './config.scss';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $main-font-family;
+  color: $dark-blue;
+  overscroll-behavior: none;
+  position: fixed;
+  // overflow: hidden;
+}
+
+h1 {
+  font-size: $large-font-size;
+  font-weight: $large-font-weight;
+  margin: 0;
+}
+
+h3 {
+  font-size: $medium-font-size;
+  font-weight: $medium-font-weight;
+  margin: 0;
+}
+
+h5 {
+  font-size: $small-font-size;
+  font-weight: $small-font-weight;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.hide {
+  display: none;
+}

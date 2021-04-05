@@ -34,11 +34,13 @@ const ChapterMobile = ({ chapter }) => {
       style={{backgroundImage: 'url(' + imgSources.mobile + ')'}}
     >
       <div className="top">
-        <div className="chapter-details">
-          <div className="mobile-horizontal-container">
-            <h3 className="chapter-number">{`Chapter ${chapterNumber}:`}</h3>
-            <h3 className="chapter-title">{title}</h3>
-            <Socials />
+        <div className="mobile-horizontal-container">
+          <div className="chapter-details">
+            <div className="mobile-horizontal-container">
+              <h3 className="chapter-number">{`Chapter ${chapterNumber}:`}</h3>
+              <h3 className="chapter-title">{title}</h3>
+              <Socials />
+            </div>
           </div>
         </div>
       </div>
@@ -66,12 +68,21 @@ const ChapterMobile = ({ chapter }) => {
       </div>
 
       <div className="bottom">
-        <div className="timings noselect">
-          <h3 className="current-time">{utils.formatTime(curTime)}</h3>
-          <h3 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h3>
+        <div className="times no-select">
+          <div className="current-time-container">
+            <h1 className="current-time">{utils.formatTime(curTime)}</h1>
+          </div>
+          <h1 className="time-slash"> / </h1>
+          <div className="time-remaining-container">
+            <h1 className="time-remaining">{`-${utils.formatTime(Math.floor(duration) - curTime)}`}</h1>
+          </div>
         </div>
+
         <Rwnd onClick={handleRwnd} />
         <Fwd onClick={handleFwd} />
+      </div>
+
+      <div className="background-image-overlay">
       </div>
     </div>
   );

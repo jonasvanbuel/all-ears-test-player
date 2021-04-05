@@ -1,7 +1,11 @@
+$font-size: 1.17rem;
+
 .chapter-mobile .socials {
-  margin-top: 8px;
+  margin-top: 1rem;
 
   .fas {
+    font-size: $font-size;
+    margin-right: 0.5rem;
     cursor: pointer;
   }
 }
@@ -9,7 +13,7 @@
 .chapter-desktop .socials {
 
   .fas {
-    font-size: 1.17rem;
+    font-size: $font-size;
     margin-right: 1rem;
     cursor: pointer;
   }

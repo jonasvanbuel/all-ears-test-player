@@ -40,9 +40,13 @@ const ProgressCircle = (props) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id="linear-gradient">
+        <linearGradient id="linear-gradient-1">
           <stop offset="15%"  stop-color="#FFFFFF" stop-opacity="0.45" />
           <stop offset="85%" stop-color="#FFFFFF" stop-opacity="0.25"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2">
+          <stop offset="0%"  stop-color="#FFFFFF" stop-opacity="0.4" />
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.4"/>
         </linearGradient>
         <radialGradient id="radial-gradient">
           <stop offset="40%" stop-color="#040E3B" stop-opacity="0.8" />
@@ -54,8 +58,8 @@ const ProgressCircle = (props) => {
       <g className="circle-container swiper-no-swiping">
         <circle
           className="button-background"
-          cx="50" cy="50" r="48"
-          fill="url(#linear-gradient)"
+          cx="50" cy="50" r="49"
+          fill="url(#linear-gradient-1)"
         >
         </circle>
         <circle

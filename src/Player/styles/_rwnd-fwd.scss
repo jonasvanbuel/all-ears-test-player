@@ -1,0 +1,50 @@
+@import './config.scss';
+
+$btn-height: 36px;
+$side-margin: 25%;
+$margin-top: 6px;
+
+.chapter-mobile .rwnd-container,
+.chapter-mobile .fwd-container {
+  background-color: yellow;
+  background: linear-gradient(52.01deg, rgba(255, 255, 255, 0.45) 15%, rgba(255, 255, 255, 0.25) 85%);
+  border-radius: $btn-height / 2;
+
+  height: $btn-height;
+  width: $btn-height;
+  margin-top: $margin-top;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+
+  .rwnd,
+  .fwd {
+    color: $bright-green;
+    fill: $bright-green;
+    height: $btn-height;
+
+    position: absolute;
+
+    cursor: pointer;
+  }
+  .rwnd {
+    transform: scaleX(-1);
+  }
+
+  .number {
+    color: $bright-green;
+    font-size: 10px;
+    font-weight: 700;
+  }
+}
+
+.chapter-mobile .rwnd-container {
+  left: $side-margin;
+}
+
+.chapter-mobile .fwd-container {
+  right: $side-margin;
+}

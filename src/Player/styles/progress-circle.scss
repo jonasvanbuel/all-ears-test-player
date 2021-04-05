@@ -1,6 +1,8 @@
 @import './config.scss';
 
-$stroke-width: 6px;
+// When updating stroke-width, change radius background circle svg
+$stroke-width: 8px;
+
 $color-total-time: rgba(1, 1, 1, 0.2);
 $color-time-elapsed: $bright-green;
 
