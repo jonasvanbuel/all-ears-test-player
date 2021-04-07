@@ -21,7 +21,7 @@ const Header = ({ exhibition }) => {
 
           <div className="exhibition-dates noselect">
             <i className="fas fa-clock"></i>
-            <h5>{`${exhibition.dates.from} to ${exhibition.dates.to}`}</h5>
+            <h5>{`${exhibition.dates.from} - ${exhibition.dates.to}`}</h5>
           </div>
         </div>
 

@@ -26,7 +26,6 @@ const ChapterMobile = ({ chapter }) => {
     handleFwd
   } = useChapter(chapter);
 
-
   return (
     <div
       id={`ch-${chapterNumber}`}
@@ -61,8 +60,6 @@ const ChapterMobile = ({ chapter }) => {
                 <Play playing={playing} onClick={handlePlay} />
               }
             </div>
-            <Prev />
-            <Next />
           </div>
         </div>
       </div>
