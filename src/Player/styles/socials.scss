@@ -1,18 +1,35 @@
-$font-size: 1.17rem;
+@import './config.scss';
+
+$font-size: 1.4rem;
 
 .chapter-mobile .socials {
   margin-top: 1rem;
 
-  .fas {
+  a {
+    color: white;
+  }
+
+  .fas,
+  .far,
+  .fab {
     font-size: $font-size;
-    margin-right: 0.5rem;
+    margin-right: 0.7rem;
     cursor: pointer;
+  }
+
+  .fa-bookmark {
+    font-size: $font-size - 0.1rem
+  }
+
+  .fas.fa-bookmark {
+    color: $bright-green;
   }
 }
 
 .chapter-desktop .socials {
-
-  .fas {
+  .fas,
+  .far,
+  .fab {
     font-size: $font-size;
     margin-right: 1rem;
     cursor: pointer;

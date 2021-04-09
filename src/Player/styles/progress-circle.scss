@@ -1,47 +1,83 @@
 @import './config.scss';
 
-// When updating stroke-width, change radius background circle svg
-$stroke-width: 8px;
+// When updating stroke-width, change radius background circle svg (.button-background)
+// by updating and running "utils.getProgressCircleRadius"
+$stroke-width-wide: 8px;
+$stroke-width-medium: 6px;
 
 $color-total-time: rgba(1, 1, 1, 0.2);
 $color-time-elapsed: $bright-green;
 
-
-.progress-circle-container {
+.chapter-mobile .progress-circle-container {
   height: 100%;
 }
 
-.progress-circle {
-  // background-color: white;
+.chapter-mobile .progress-circle {
   height: 100%;
 
   position: absolute;
   left: 50%;
   transform: translateX(-50%) scaleX(-1);
+
+  .circle-container {
+    fill: none;
+    stroke: none;
+
+    .total-time {
+      position: relative;
+      stroke-width: $stroke-width-wide;
+      stroke: $color-total-time;
+    }
+    .time-elapsed {
+      position: relative;
+      stroke-width: $stroke-width-wide + 1;
+      stroke: $color-time-elapsed;
+      fill-rule: nonzero;
+      stroke-linecap: round;
+
+      transform: rotate(88deg);
+      transform-origin: center;
+    }
+    .button-background {
+      position: relative;
+      transform: rotate(-120deg);
+      transform-origin: 50% 50%;
+      user-select: none;
+    }
+  }
 }
 
-.circle-container {
-  fill: none;
-  stroke: none;
+
+// RESPONSIVE TEMPLATE
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+// }
+
+// iPhoneX, Pixel 2XL and taller...
+@media (min-height: 800px) {
+  .chapter-mobile .progress-circle{
+    .circle-container {
+      .total-time {
+        stroke-width: $stroke-width-medium;
+      }
+      .time-elapsed {
+        stroke-width: $stroke-width-medium + 1;
+      }
+    }
+  }
 }
 
-.progress-circle .total-time {
-  stroke-width: $stroke-width;
-  stroke: $color-total-time;
-}
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
 
-.progress-circle .time-elapsed {
-  stroke: $color-time-elapsed;
-  fill-rule: nonzero;
-  stroke-width: $stroke-width + 1;
-  stroke-linecap: round;
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
 
-  transform: rotate(88deg);
-  transform-origin: center;
-  // transition: 1s linear all;
-}
-
-.progress-circle .button-background {
-  transform: rotate(-120deg);
-  transform-origin: 50% 50%;
-}
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }

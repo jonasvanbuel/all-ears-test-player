@@ -1,50 +1,93 @@
 @import './config.scss';
 
-$btn-height: 36px;
+$btn-height-small: 36px;
+$btn-height-medium: 44px;
+$btn-height-large: 44px;
 $side-margin: 25%;
 $margin-top: 6px;
 
-.chapter-mobile .rwnd-container,
-.chapter-mobile .fwd-container {
-  background-color: yellow;
-  background: linear-gradient(52.01deg, rgba(255, 255, 255, 0.45) 15%, rgba(255, 255, 255, 0.25) 85%);
-  border-radius: $btn-height / 2;
 
-  height: $btn-height;
-  width: $btn-height;
-  margin-top: $margin-top;
+.chapter-mobile {
+  .rwnd-container,
+  .fwd-container {
+    background: linear-gradient(52.01deg, rgba(255, 255, 255, 0.45) 15%, rgba(255, 255, 255, 0.25) 85%);
+    border-radius: $btn-height-small / 2;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    height: $btn-height-small;
+    width: $btn-height-small;
+    margin-top: $margin-top;
 
-  position: absolute;
-
-  .rwnd,
-  .fwd {
-    color: $bright-green;
-    fill: $bright-green;
-    height: $btn-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     position: absolute;
+    .rwnd,
+    .fwd {
+      color: $bright-green;
+      fill: $bright-green;
+      height: $btn-height-small;
 
-    cursor: pointer;
-  }
-  .rwnd {
-    transform: scaleX(-1);
-  }
+      position: absolute;
 
-  .number {
-    color: $bright-green;
-    font-size: 10px;
-    font-weight: 700;
+      cursor: pointer;
+    }
+    .rwnd {
+      transform: scaleX(-1);
+    }
+    .number {
+      color: $bright-green;
+      font-size: 10px;
+      font-weight: 700;
+    }
+  }
+  .rwnd-container {
+    left: $side-margin;
+  }
+  .fwd-container {
+    right: $side-margin;
   }
 }
 
-.chapter-mobile .rwnd-container {
-  left: $side-margin;
+
+
+// RESPONSIVE TEMPLATE
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+// }
+
+// Pixel 2 and taller...
+@media (min-height: 700px) {
+  .chapter-mobile {
+    grid-template-rows: 30% 40% 30%;
+
+    .rwnd-container,
+    .fwd-container {
+      border-radius: $btn-height-medium / 2;
+      height: $btn-height-medium;
+      width: $btn-height-medium;
+      .rwnd,
+      .fwd {
+        height: $btn-height-medium;
+      }
+      .number {
+        font-size: 12px;
+      }
+    }
+  }
 }
 
-.chapter-mobile .fwd-container {
-  right: $side-margin;
-}
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }

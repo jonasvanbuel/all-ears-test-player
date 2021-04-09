@@ -60,6 +60,15 @@ const utils = {
       return degrees;
     }
   },
+  getProgressCircleRadius: () => {
+    const totalTime = document.getElementById('progress-circle-total-time');
+    if (totalTime) {
+      const style = getComputedStyle(totalTime);
+      const strokeWidth = parseInt(style.strokeWidth.replace('px', ''));
+      const radius = 45 + (strokeWidth / 2);
+      return radius
+    }
+  },
   formatTime: (seconds) => {
     if (seconds) {
       const date = new Date(null);

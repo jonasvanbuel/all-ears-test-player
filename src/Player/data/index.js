@@ -2,7 +2,7 @@ export const data = {
   exhibition: {
     id: 1,
     mainTitle: 'Bruce Nauman',
-    subTitle: '',
+    subTitle: 'Retrospective',
     location: 'Tate Modern, London',
     locationUrl: 'https://www.tate.org.uk/whats-on/tate-modern/exhibition/bruce-nauman',
     dates: {

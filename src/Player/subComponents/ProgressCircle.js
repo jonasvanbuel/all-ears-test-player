@@ -1,4 +1,5 @@
 import useProgressCircle from '../hooks/useProgressCircle';
+import utils from '../utils';
 
 import '../styles/progress-circle.scss';
 
@@ -58,12 +59,13 @@ const ProgressCircle = (props) => {
       <g className="circle-container swiper-no-swiping">
         <circle
           className="button-background"
-          cx="50" cy="50" r="49"
+          cx="50" cy="50" r={utils.getProgressCircleRadius()}
           fill="url(#linear-gradient-1)"
         >
         </circle>
         <circle
           className="total-time"
+          id="progress-circle-total-time"
           cx="50" cy="50" r="45"
           onClick={handleClick}
           onMouseMove={handleMouseMove}
