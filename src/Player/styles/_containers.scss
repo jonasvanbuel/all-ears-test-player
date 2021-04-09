@@ -22,6 +22,12 @@
 // @media (min-width: 576px) {
 // }
 
+@media (min-width: 400px) {
+  .mobile-horizontal-container {
+    width: calc(100% - 3rem);
+  }
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .desktop-horizontal-container {

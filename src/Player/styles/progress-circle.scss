@@ -57,7 +57,7 @@ $color-time-elapsed: $bright-green;
 // }
 
 // iPhoneX, Pixel 2XL and taller...
-@media (min-height: 800px) {
+@media (min-height: 700px) {
   .chapter-mobile .progress-circle{
     .circle-container {
       .total-time {

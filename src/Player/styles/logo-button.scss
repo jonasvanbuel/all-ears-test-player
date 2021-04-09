@@ -6,7 +6,7 @@
 
   position: absolute;
   right: 0px;
-  top: 15%;
+  bottom: -12%;
 
   z-index: 5;
 }
@@ -17,8 +17,12 @@
 // No media query since this is the default in Bootstrap
 
 // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-// }
+@media (min-height: 700px) {
+  .logo-button {
+    right: 1rem;
+    bottom: -12%;
+  }
+}
 
 // Medium devices (tablets, 768px and up)
 // @media (min-width: 768px) {

@@ -62,8 +62,6 @@ $margin-top: 6px;
 // Pixel 2 and taller...
 @media (min-height: 700px) {
   .chapter-mobile {
-    grid-template-rows: 30% 40% 30%;
-
     .rwnd-container,
     .fwd-container {
       border-radius: $btn-height-medium / 2;
