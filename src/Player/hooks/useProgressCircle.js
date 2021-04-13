@@ -15,9 +15,13 @@ function useProgressCircle(props) {
 
     // Update mouseDown state handler callbacks
     const setMouseDownTrue = () => {
+      // Disable body scroll - improved UX
+      utils.disableScroll('body');
       setMouseDown(true);
     }
     const setMouseDownFalse = () => {
+      // Disable body scroll - improved UX
+      utils.enableScroll('body');
       setMouseDown(false)
     }
     document.body.addEventListener('mousedown', setMouseDownTrue)

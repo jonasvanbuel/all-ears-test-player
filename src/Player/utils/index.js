@@ -77,6 +77,20 @@ const utils = {
     } else {
       return "00:00"
     }
+  },
+  disableScroll: (tagName) => {
+    const body = document.getElementsByTagName(tagName)[0];
+    if (!body.classList.contains('noscroll')) {
+      body.classList.add('noscroll');
+      console.log(body.classList);
+    }
+  },
+  enableScroll: (tagName) => {
+    const body = document.getElementsByTagName(tagName)[0];
+    if (body.classList.contains('noscroll')) {
+      body.classList.remove('noscroll');
+      console.log(body.classList);
+    }
   }
 }
 
