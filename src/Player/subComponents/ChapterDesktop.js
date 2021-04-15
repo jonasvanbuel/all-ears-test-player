@@ -37,6 +37,7 @@ const ChapterDesktop = ({ chapter }) => {
           className="background-image"
           alt="chapter-background"
         />
+        <div className="background-image-overlay"></div>
       </div>
       <div className="desktop-horizontal-container">
         <Audio
