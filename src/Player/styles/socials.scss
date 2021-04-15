@@ -1,37 +1,45 @@
 @import './config.scss';
 
-$font-size: 1.4rem;
+$mobile-font-size: 1.4rem;
+$desktop-font-size: 1.4rem;
 
-.chapter-mobile .socials {
+
+#mobile-app .socials {
   margin-top: 1rem;
-
   a {
     color: white;
   }
-
   .fas,
   .far,
   .fab {
-    font-size: $font-size;
+    font-size: $mobile-font-size;
     margin-right: 0.7rem;
     cursor: pointer;
   }
-
   .fa-bookmark {
-    font-size: $font-size - 0.1rem
+    font-size: $mobile-font-size - 0.1rem;
   }
-
   .fas.fa-bookmark {
     color: $bright-green;
   }
 }
 
-.chapter-desktop .socials {
+#desktop-app .socials {
+  margin-top: 1.5rem;
+  a {
+    color: $dark-blue;
+  }
   .fas,
   .far,
   .fab {
-    font-size: $font-size;
-    margin-right: 1rem;
+    font-size: $desktop-font-size;
+    margin-right: 0.8rem;
     cursor: pointer;
+  }
+  .fa-bookmark {
+    font-size: $desktop-font-size - 0.15rem;
+  }
+  .fas.fa-bookmark {
+    color: $bright-green;
   }
 }

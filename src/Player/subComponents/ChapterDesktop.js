@@ -41,14 +41,16 @@ const ChapterDesktop = ({ chapter }) => {
         <div className="chapter-details-container">
           <div className="top-container">
             <div className="pp-container">
-              {playing ?
-                <Pause playing={playing} onClick={handlePause} /> :
-                <Play playing={playing} onClick={handlePlay} />
-              }
+              <div className="pp-background-circle">
+                {playing ?
+                  <Pause playing={playing} onClick={handlePause} /> :
+                  <Play playing={playing} onClick={handlePlay} />
+                }
+              </div>
             </div>
             <div className="chapter-details">
-              <p className="chapter-title">{`Chapter ${chapterNumber}:`}</p>
-              <p className="chapter-title">{title}</p>
+              <h3 className="chapter-header">{`Chapter ${chapterNumber}:`}</h3>
+              <h3 className="chapter-title">{title}</h3>
             </div>
           </div>
           <ProgressBar
@@ -57,8 +59,9 @@ const ChapterDesktop = ({ chapter }) => {
             duration={duration}
             setCurTimeAudio={setCurTimeAudio}
           />
-          <div className="timings noselect">
+          <div className="times noselect">
             <h3 className="current-time">{utils.formatTime(curTime)}</h3>
+            <h3 className="slash">/</h3>
             <h3 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h3>
           </div>
           <Socials />

@@ -11,25 +11,43 @@ body {
   // overflow: hidden;
 }
 
-h1 {
+p {
+  margin: 0;
+}
+
+#mobile-app h1 {
   font-size: $large-font-size;
   font-weight: $large-font-weight;
   margin: 0;
 }
 
-h3 {
+#mobile-app h3 {
   font-size: $medium-font-size;
   font-weight: $medium-font-weight;
   margin: 0;
 }
 
-h5 {
+#mobile-app h5 {
   font-size: $small-font-size;
   font-weight: $small-font-weight;
   margin: 0;
 }
 
-p {
+#desktop-app h1 {
+  font-size: $large-font-size + 0.4rem;
+  font-weight: $large-font-weight;
+  margin: 0;
+}
+
+#desktop-app h3 {
+  font-size: $medium-font-size + 0.2rem;
+  font-weight: $medium-font-weight;
+  margin: 0;
+}
+
+#desktop-app h5 {
+  font-size: $small-font-size + 0.2rem;
+  font-weight: $small-font-weight;
   margin: 0;
 }
 

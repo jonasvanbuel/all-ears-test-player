@@ -1,7 +1,8 @@
 @import './config.scss';
 
-.chapter-mobile .play,
-.chapter-mobile .pause {
+
+#mobile-app .play,
+#mobile-app .pause {
   color: $bright-green;
   fill: $bright-green;
   height: 35%;
@@ -13,16 +14,34 @@
   cursor: pointer;
 }
 
-.chapter-mobile .play {
+#mobile-app .play {
   margin-left: 6px;
 }
 
-.chapter-desktop .play,
-.chapter-desktop .pause {
-  height: 56px;
+
+#desktop-app .pp-background-circle {
+  background-color: $dark-blue;
+
+  height: 4rem;
+  width: 4rem;
+  border-radius: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#desktop-app .play,
+#desktop-app .pause {
+  color: $bright-green;
+  fill: $bright-green;
+  height: 40%;
   cursor: pointer;
 }
 
+#desktop-app .play {
+  margin-left: 6px;
+}
 
 // RESPONSIVE TEMPLATE
 // Extra small devices (portrait phones, less than 576px)

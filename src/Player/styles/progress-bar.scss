@@ -1,21 +1,27 @@
-.chapter-desktop .progress-bar {
-  height: 24px;
+@import './config.scss';
+
+$progress-bar-height: 0.3rem;
+
+#desktop-app .progress-bar {
+  height: 2rem;
   width: 100%;
-  margin: 1rem 0;
+  margin-top: 1.5rem;
 
   position: relative;
 
   .total-time,
   .time-elapsed {
-    height: 0.4rem;
+    height: $progress-bar-height;
 
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+
+    border-radius: 50px;
   }
 
   .total-time {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: $dark-blue;
     width: 100%;
 
     z-index: 1;
@@ -24,12 +30,11 @@
   }
 
   .time-elapsed {
-    background-color: blue;
-
-    left: 0%;
-
+    background-color: $bright-green;
+    height: $progress-bar-height * 1.25;
+    width: 101%;
+    left: -1px;
     z-index: 2;
-
     cursor: pointer;
   }
 }

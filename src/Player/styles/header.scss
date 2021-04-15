@@ -62,9 +62,36 @@ header.mobile-header {
   }
 }
 
-header.desktop-header {
-  height: $desktop-header-height;
+#desktop-app {
+  .desktop-header {
+    .desktop-horizontal-container {
+      padding-top: 3rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .desktop-header .exhibition-details {
+    .title {
+    }
+    .sub-title {
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+    .location {
+      display: flex;
+      margin-top: 1rem;
+    }
+    .dates {
+      display: flex;
+      margin-top: 0.2rem;
+    }
+  }
 }
+
+#desktop-app .exhibition-details .fas {
+  margin-right: 0.8rem;
+}
+
 
 // RESPONSIVE TEMPLATE
 // Extra small devices (portrait phones, less than 576px)
