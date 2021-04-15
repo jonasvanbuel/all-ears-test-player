@@ -30,8 +30,14 @@ const ChapterDesktop = ({ chapter }) => {
     <div
       id={`ch-${chapterNumber}`}
       className="chapter-desktop"
-      style={{backgroundImage: 'url(' + imgSources.desktop + ')'}}
     >
+      <div className="background-image-container">
+        <img
+          src={imgSources.desktop}
+          className="background-image"
+          alt="chapter-background"
+        />
+      </div>
       <div className="desktop-horizontal-container">
         <Audio
           chapterNumber={chapterNumber}
@@ -69,8 +75,8 @@ const ChapterDesktop = ({ chapter }) => {
 
         <Prev />
         <Next />
-      </div>
     </div>
+  </div>
   );
 }
 
