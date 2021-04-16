@@ -39,12 +39,12 @@ const ChapterDesktop = ({ chapter }) => {
         />
         <div className="background-image-overlay"></div>
       </div>
+
       <div className="desktop-horizontal-container">
         <Audio
           chapterNumber={chapterNumber}
           audioSources={audioSources}
         />
-
         <div className="chapter-details-container">
           <div className="top-container">
             <div className="pp-container">
@@ -74,9 +74,10 @@ const ChapterDesktop = ({ chapter }) => {
           <Socials />
         </div>
 
-        <Prev />
-        <Next />
     </div>
+
+    <Prev />
+    <Next />
   </div>
   );
 }
