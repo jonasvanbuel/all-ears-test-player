@@ -69,7 +69,7 @@ const ChapterDesktop = ({ chapter }) => {
           <div className="times noselect">
             <h3 className="current-time">{utils.formatTime(curTime)}</h3>
             <h5 className="slash">/</h5>
-            <h5 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h5>
+            <h5 className="time-remaining">{duration ? utils.formatTime(duration) : utils.formatTime(0)}</h5>
           </div>
           <Socials />
         </div>

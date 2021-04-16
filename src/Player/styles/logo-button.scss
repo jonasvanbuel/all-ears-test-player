@@ -12,7 +12,7 @@
 }
 
 .desktop-header .logo-button {
-  right: 12vw;
+  right: 0px;
   bottom: -10%;
 }
 
@@ -32,7 +32,7 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   #desktop-app .logo-button {
-    max-height: 140px;
+    max-height: 130px;
   }
 }
 
