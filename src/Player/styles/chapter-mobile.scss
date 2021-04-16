@@ -17,7 +17,7 @@
 }
 
 
-.chapter-mobile .chapter-details {
+#mobile-app .chapter-details {
   // background: linear-gradient(80deg, rgba(0, 0, 0, 0.4) 10%, rgba(255, 255, 255, 0) 85%);
   // backdrop-filter: blur( 3.0px );
   //   -webkit-backdrop-filter: blur( 3.0px );
@@ -36,7 +36,7 @@
 
   .chapter-header {
     margin-top: 0px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
   }
 
   .chapter-title {
@@ -57,14 +57,13 @@
   position: relative;
 }
 
-// TODO Externalise
-.chapter-mobile .times {
-  height: 27%;
-
+#mobile-app .times {
   position: relative;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+
+  margin: 0.3rem;
 
   .current-time-container {
     min-width: 45%;
@@ -79,20 +78,17 @@
   .time-remaining-container {
     min-width: 45%;
   }
-
   .current-time,
   .time-remaining,
   .time-slash {
     color: $bright-green;
     margin: 0;
   }
-
   .time-slash,
   .time-remaining {
     font-weight: 400;
     opacity: 0.8;
   }
-
   .time-remaining {
     margin-left: -2px;
   }

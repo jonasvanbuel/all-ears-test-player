@@ -69,9 +69,9 @@ const ChapterMobile = ({ chapter }) => {
           <div className="current-time-container">
             <h1 className="current-time">{utils.formatTime(curTime)}</h1>
           </div>
-          <h1 className="time-slash"> / </h1>
+          <h3 className="time-slash"> / </h3>
           <div className="time-remaining-container">
-            <h1 className="time-remaining">{`-${utils.formatTime(Math.floor(duration) - curTime)}`}</h1>
+            <h3 className="time-remaining">{duration ? utils.formatTime(duration) : utils.formatTime(0)}</h3>
           </div>
         </div>
 
