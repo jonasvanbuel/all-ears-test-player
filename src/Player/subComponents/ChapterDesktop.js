@@ -57,7 +57,7 @@ const ChapterDesktop = ({ chapter }) => {
             </div>
             <div className="chapter-details">
               <h3 className="chapter-header">{`Chapter ${chapterNumber}:`}</h3>
-              <h3 className="chapter-title">{title}</h3>
+              <h5 className="chapter-title">{title}</h5>
             </div>
           </div>
           <ProgressBar
@@ -68,8 +68,8 @@ const ChapterDesktop = ({ chapter }) => {
           />
           <div className="times noselect">
             <h3 className="current-time">{utils.formatTime(curTime)}</h3>
-            <h3 className="slash">/</h3>
-            <h3 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h3>
+            <h5 className="slash">/</h5>
+            <h5 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h5>
           </div>
           <Socials />
         </div>

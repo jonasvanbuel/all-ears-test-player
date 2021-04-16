@@ -28,12 +28,12 @@
 #desktop-app .chapter-details-container {
   background-color: white;
 
-  width: 66%;
+  width: calc(50% - 2rem);
   padding: 2rem;
   padding-top: 1rem;
 
   position: relative;
-  left: -32px;
+  left: -2rem;
 }
 
 #desktop-app .top-container {
@@ -59,6 +59,7 @@
 #desktop-app .times {
     display: flex;
     justify-content: flex-start;
+    align-items: flex-end;
 
     .current-time {
       width: 3rem;
