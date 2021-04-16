@@ -6,8 +6,8 @@ body {
   padding: 0;
   font-family: $main-font-family;
   color: $dark-blue;
-  overscroll-behavior: none;
-  // position: fixed;
+  overscroll-behavior-y: none;
+  position: fixed;
   // overflow: hidden;
 }
 
