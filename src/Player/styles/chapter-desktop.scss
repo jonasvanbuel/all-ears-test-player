@@ -27,6 +27,9 @@
 
 #desktop-app .chapter-details-container {
   background-color: white;
+  // background: linear-gradient(80deg, rgba(0, 0, 0, 0.4) 10%, rgba(255, 255, 255, 0) 85%);
+  // backdrop-filter: blur( 3.0px );
+  //   -webkit-backdrop-filter: blur( 3.0px );
 
   width: calc(50% - 2rem);
   padding: 2rem;

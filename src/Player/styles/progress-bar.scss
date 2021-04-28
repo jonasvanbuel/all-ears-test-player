@@ -1,6 +1,7 @@
 @import './config.scss';
 
-$progress-bar-height: 0.3rem;
+$progress-bar-height: 0.2rem;
+$time-elapsed-height: 0.35rem;
 
 #desktop-app .progress-bar {
   height: 0.5rem;
@@ -32,7 +33,7 @@ $progress-bar-height: 0.3rem;
 
   .time-elapsed {
     background-color: $bright-green;
-    height: $progress-bar-height * 1.25;
+    height: $time-elapsed-height;
     width: 101%;
     left: -1px;
     z-index: 2;
