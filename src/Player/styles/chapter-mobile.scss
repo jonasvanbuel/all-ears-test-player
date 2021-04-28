@@ -2,61 +2,137 @@
 
 
 .chapter-mobile {
-  background-color: green;
-
   height: 100%;
   width: 100%;
 
   display: grid;
-  grid-template-rows: 30% 40% 30%;
+  grid-template-rows: 25% 45% 30%;
+
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.chapter-mobile > div {
-
-}
-
-// TODO: TEMP
-.chapter-mobile .top {
-  background-color: yellow;
-}
-.chapter-mobile .middle {
-  background-color: red;
-
-  .mobile-horizontal-container {
+.chapter-mobile .middle .mobile-horizontal-container {
     height: 100%;
-
-  }
-}
-.chapter-mobile .bottom {
-  background-color: orange;
 }
 
-.chapter-mobile .chapter-details {
+
+#mobile-app .chapter-details {
+  // background: linear-gradient(80deg, rgba(0, 0, 0, 0.4) 10%, rgba(255, 255, 255, 0) 85%);
+  // backdrop-filter: blur( 3.0px );
+  //   -webkit-backdrop-filter: blur( 3.0px );
+
   width: 100%;
+
+  padding-top: 0.5rem;
   z-index: 2;
+
+  color: white;
+
+  // TODO delete this container and apply padding-right to other element
+  .mobile-horizontal-container {
+    padding-right: 20vw;
+  }
+
+  .chapter-header {
+    margin-top: 0px;
+    margin-bottom: 0.4rem;
+  }
 
   .chapter-title {
-    margin-top: 0px;
+    font-weight: 400;
+    font-style: italic;
+    // margin-top: 4px;
   }
 }
 
+.chapter-mobile .top,
+.chapter-mobile .middle,
+.chapter-mobile .bottom {
+  z-index: 5;
+}
 
+.chapter-mobile .bottom {
+  // padding-top: 8px;
+  position: relative;
+}
 
-.chapter-mobile .timings {
-  width: 100%;
-  position: absolute;
-  bottom: 20%;
+#mobile-app .times {
+  position: relative;
+
   display: flex;
-  justify-content: space-around;
+  align-items: flex-end;
 
-  z-index: 2;
+  margin: 0.3rem;
 
+  .current-time-container {
+    min-width: 45%;
+
+    display: flex;
+    justify-content: flex-end;
+  }
+  .time-slash {
+    min-width: 10%;
+    text-align: center;
+  }
+  .time-remaining-container {
+    min-width: 45%;
+  }
   .current-time,
-  .time-remaining {
-    color: yellow;
+  .time-remaining,
+  .time-slash {
+    color: $bright-green;
     margin: 0;
   }
+  .time-slash,
+  .time-remaining {
+    font-weight: 400;
+    opacity: 0.8;
+  }
+  .time-remaining {
+    margin-left: -2px;
+  }
 }
 
+.chapter-mobile .background-image-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0.2) 85%);
+}
 
+// RESPONSIVE TEMPLATE
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+// }
+
+// Pixel 2 and taller...
+@media (min-height: 700px) {
+  .chapter-mobile {
+    grid-template-rows: 25% 45% 30%;
+  }
+  .chapter-mobile .chapter-details {
+    padding-top: 1rem;
+  }
+  .chapter-mobile .chapter-header {
+    font-size: $large-font-size;
+    font-weight: $large-font-weight;
+    margin-bottom: 0.6rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }
 

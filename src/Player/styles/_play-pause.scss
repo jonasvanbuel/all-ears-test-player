@@ -1,7 +1,10 @@
-.chapter-mobile .play,
-.chapter-mobile .pause {
-  color: yellow;
-  fill: yellow;
+@import './config.scss';
+
+
+#mobile-app .play,
+#mobile-app .pause {
+  color: $bright-green;
+  fill: $bright-green;
   height: 35%;
 
   position: absolute;
@@ -11,14 +14,59 @@
   cursor: pointer;
 }
 
-.chapter-mobile .play {
-  margin-left: 10px;
+#mobile-app .play {
+  margin-left: 6px;
 }
 
 
+#desktop-app .pp-background-circle {
+  background-color: $dark-blue;
 
-.chapter-desktop .play,
-.chapter-desktop .pause {
-  height: 56px;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#desktop-app .play,
+#desktop-app .pause {
+  color: $bright-green;
+  fill: $bright-green;
+  height: 40%;
   cursor: pointer;
 }
+
+#desktop-app .play {
+  margin-left: 6px;
+}
+
+// RESPONSIVE TEMPLATE
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+// }
+
+// iPhoneX, Pixel 2XL and taller...
+@media (min-height: 800px) {
+  .chapter-mobile .play,
+  .chapter-mobile .pause {
+    height: 30%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }

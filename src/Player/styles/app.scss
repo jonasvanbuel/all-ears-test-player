@@ -1,11 +1,17 @@
 .app {
   position: absolute;
   top: 0px;
+
+  width: 100vw;
+  height: 100vh;
 }
 
 #mobile-app {
-
+  display: flex;
+  flex-direction: column;
 }
 
 #desktop-app {
+  display: flex;
+  flex-direction: column;
 }

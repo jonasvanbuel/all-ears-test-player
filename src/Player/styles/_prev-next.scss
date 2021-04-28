@@ -1,37 +1,46 @@
-.prev,
-.next {
-  color: black;
-  fill: black;
+@import './config.scss';
+
+#desktop-app .prev,
+#desktop-app .next {
+  background-color: white;
+  height: 4rem;
+  width: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   position: absolute;
   top: 50%;
-  cursor: pointer;
-}
-
-.prev {
-  left: 0px;
-  transform: translateY(-50%) scaleX(-1);
-}
-
-.next {
-  right: 0px;
   transform: translateY(-50%);
+
+  cursor: pointer;
+
+  svg {
+    fill: $dark-blue;
+    height: 50%;
+  }
 }
 
-.chapter-mobile .prev,
-.chapter-mobile .next {
-  height: 32px;
+#desktop-app .prev {
+  left: 0px;
+
+  svg {
+    transform: scaleX(-1);
+    margin-right: 0.4rem;
+  }
 }
 
-.chapter-desktop .prev,
-.chapter-desktop .next {
-  height: 32px;
+#desktop-app .next {
+  right: 0px;
+
+  svg {
+    margin-left: 0.4rem;
+  }
 }
 
-.chapter-desktop .prev {
-  margin-left: 24px;
-}
-
-.chapter-desktop .next {
-  margin-right: 24px;
+#desktop-app .prev.swiper-button-disabled,
+#desktop-app .next.swiper-button-disabled {
+  opacity: 0;
+  cursor: default;
 }

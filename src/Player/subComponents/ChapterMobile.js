@@ -9,11 +9,12 @@ import Fwd from './Fwd';
 import Next from './Next';
 import Prev from './Prev';
 import ProgressCircle from './ProgressCircle';
+import Socials from './Socials';
 
 import '../styles/chapter-mobile.scss';
 
 const ChapterMobile = ({ chapter }) => {
-  const { chapterNumber, title, audioSources } = chapter;
+  const { chapterNumber, title, audioSources, imgSources } = chapter;
   const {
     playing,
     duration,
@@ -26,12 +27,19 @@ const ChapterMobile = ({ chapter }) => {
   } = useChapter(chapter);
 
   return (
-    <div id={`ch-${chapterNumber}`} className="chapter-mobile">
+    <div
+      id={`ch-${chapterNumber}`}
+      className="chapter-mobile"
+      style={{backgroundImage: 'url(' + imgSources.mobile + ')'}}
+    >
       <div className="top">
         <div className="mobile-horizontal-container">
           <div className="chapter-details">
-            <p className="chapter-title">{`Chapter ${chapterNumber}:`}</p>
-            <p className="chapter-title">{title}</p>
+            <div className="mobile-horizontal-container">
+              <h3 className="chapter-header">{`Chapter ${chapterNumber}:`}</h3>
+              <h3 className="chapter-title">{title}</h3>
+              <Socials />
+            </div>
           </div>
         </div>
       </div>
@@ -52,19 +60,26 @@ const ChapterMobile = ({ chapter }) => {
                 <Play playing={playing} onClick={handlePlay} />
               }
             </div>
-            <Prev />
-            <Next />
           </div>
         </div>
       </div>
 
       <div className="bottom">
-        <div className="timings noselect">
-          <h3 className="current-time">{utils.formatTime(curTime)}</h3>
-          <h3 className="time-remaining">{utils.formatTime(Math.floor(duration) - curTime)}</h3>
+        <div className="times no-select">
+          <div className="current-time-container">
+            <h1 className="current-time">{utils.formatTime(curTime)}</h1>
+          </div>
+          <h3 className="time-slash"> / </h3>
+          <div className="time-remaining-container">
+            <h3 className="time-remaining">{duration ? utils.formatTime(duration) : utils.formatTime(0)}</h3>
+          </div>
         </div>
+
         <Rwnd onClick={handleRwnd} />
         <Fwd onClick={handleFwd} />
+      </div>
+
+      <div className="background-image-overlay">
       </div>
     </div>
   );

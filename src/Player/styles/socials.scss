@@ -1,7 +1,45 @@
-.chapter-desktop .socials {
-  .fas {
-    font-size: 1.17rem;
-    margin-right: 1rem;
+@import './config.scss';
+
+$mobile-font-size: 1.4rem;
+$desktop-font-size: 1.4rem;
+
+
+#mobile-app .socials {
+  margin-top: 1rem;
+  a {
+    color: white;
+  }
+  .fas,
+  .far,
+  .fab {
+    font-size: $mobile-font-size;
+    margin-right: 0.7rem;
     cursor: pointer;
+  }
+  .fa-bookmark {
+    font-size: $mobile-font-size - 0.1rem;
+  }
+  .fas.fa-bookmark {
+    color: $bright-green;
+  }
+}
+
+#desktop-app .socials {
+  margin-top: 1.5rem;
+  a {
+    color: $dark-blue;
+  }
+  .fas,
+  .far,
+  .fab {
+    font-size: $desktop-font-size;
+    margin-right: 0.8rem;
+    cursor: pointer;
+  }
+  .fa-bookmark {
+    font-size: $desktop-font-size - 0.15rem;
+  }
+  .fas.fa-bookmark {
+    color: $bright-green;
   }
 }

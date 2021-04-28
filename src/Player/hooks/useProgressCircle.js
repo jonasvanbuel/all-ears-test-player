@@ -14,10 +14,15 @@ function useProgressCircle(props) {
     timeElapsedRef.current = utils.getTimeElapsedEl("circle", chapterNumber);
 
     // Update mouseDown state handler callbacks
-    const setMouseDownTrue = () => {
+    const setMouseDownTrue = (event) => {
+      // event.preventDefault();
       setMouseDown(true);
     }
-    const setMouseDownFalse = () => {
+    const setMouseDownFalse = (event) => {
+      // event.preventDefault();
+      // Disable body scroll - improved UX
+      utils.enableScroll('body');
+
       setMouseDown(false)
     }
     document.body.addEventListener('mousedown', setMouseDownTrue)
@@ -98,12 +103,18 @@ function useProgressCircle(props) {
 
   const handleMouseMove = (event) => {
     if (mouseDown === true) {
+      // Disable body scroll - improved UX
+      utils.disableScroll('body');
+
       const points = evalPoints(chapterNumber, event)
       updateCurTime(points);
     }
   }
 
   const handleTouchMove = (event) => {
+    // Disable body scroll - improved UX
+    utils.disableScroll('body');
+
     const points = evalPoints(chapterNumber, event)
     updateCurTime(points);
   }

@@ -1,36 +1,68 @@
 @import './config.scss';
 
 .footer-mobile {
-  height: $mobile-footer-height;
-
   display: flex;
   align-items: center;
-}
 
-.footer-mobile .navigation-bar {
-  background-color: white;
-  width: 100%;
+  position: relative;
+  bottom: 0px;
 
-  display: flex;
-  justify-content: space-around;
+  .mobile-horizontal-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
 
-  .navigation-icon {
-    // background-color: yellow;
+    .navigation-bar {
+      background-color: white;
+      width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+      display: flex;
+      justify-content: space-around;
 
-    .fas,
-    .far {
-      font-size: 1.2rem;
-      margin-bottom: 4px;
-    }
+      .navigation-icon {
+        // background-color: yellow;
 
-    .label {
-      font-size: 0.6rem;
-      margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .fas,
+        .far {
+          font-size: 1.4rem;
+          // margin-bottom: 4px;
+        }
+      }
     }
   }
 }
+
+// RESPONSIVE TEMPLATE
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+// Pixel 2 and taller...
+@media (min-height: 700px) {
+  .footer-mobile .fas,
+  .footer-mobile .far {
+    font-size: 2rem;
+  }
+
+  .footer-mobile .label {
+    margin: 0;
+    margin-top: 0.2rem;
+    font-size: 0.6rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }

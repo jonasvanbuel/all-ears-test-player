@@ -1,11 +1,11 @@
 // Fallback
 .horizontal-container {
-  width: 90%;
+  width: calc(100% - 2rem);
   margin: 0 auto;
 }
 
 .mobile-horizontal-container {
-  width: 90%;
+  width: calc(100% - 2rem);
   margin: 0 auto;
 }
 
@@ -21,6 +21,12 @@
 // Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) {
 // }
+
+@media (min-width: 400px) {
+  .mobile-horizontal-container {
+    width: calc(100% - 3rem);
+  }
+}
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -39,6 +45,6 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .desktop-horizontal-container {
-    width: 65%;
+    width: 900px;
   }
 }

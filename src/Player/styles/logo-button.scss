@@ -1,12 +1,20 @@
 @import './config.scss';
-@import './general.scss';
-@import './containers.scss';
-@import './swiper.scss';
 
-@import './controls.scss';
-@import './play-pause.scss';
-@import './prev-next.scss';
-@import './rwnd-fwd.scss';
+.logo-button {
+  height: 100%;
+  max-height: 120px;
+
+  position: absolute;
+  right: 0px;
+  bottom: -12%;
+
+  z-index: 5;
+}
+
+.desktop-header .logo-button {
+  right: 0px;
+  bottom: -10%;
+}
 
 
 // RESPONSIVE TEMPLATE
@@ -14,12 +22,19 @@
 // No media query since this is the default in Bootstrap
 
 // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-// }
+@media (min-height: 700px) {
+  #mobile-app .logo-button {
+    right: 1rem;
+    bottom: -12%;
+  }
+}
 
 // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-// }
+@media (min-width: 768px) {
+  #desktop-app .logo-button {
+    max-height: 130px;
+  }
+}
 
 // Large devices (desktops, 992px and up)
 // @media (min-width: 992px) {

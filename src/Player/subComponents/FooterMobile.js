@@ -2,25 +2,34 @@ import '../styles/footer-mobile.scss';
 
 
 const FooterMobile = () => {
+
+  const getLabelTreshold = () => {
+    const height = window.innerHeight;
+    if (height >= 700) {
+      return true;
+    }
+    return false;
+  }
+
   return (
     <footer className="footer-mobile noselect">
       <div className="horizontal-container">
         <div className="navigation-bar">
           <div className="navigation-icon">
             <i className="fas fa-home"></i>
-            <p className="label">Home</p>
+            {getLabelTreshold() ? <p className="label">Home</p> : null}
           </div>
           <div className="navigation-icon">
             <i className="fas fa-search"></i>
-            <p className="label">Explore</p>
+            {getLabelTreshold() ? <p className="label">Explore</p> : null}
           </div>
           <div className="navigation-icon">
             <i className="far fa-play-circle"></i>
-            <p className="label">Listen</p>
+            {getLabelTreshold() ? <p className="label">Listen</p> : null}
           </div>
           <div className="navigation-icon">
             <i className="fas fa-user"></i>
-            <p className="label">My Ears</p>
+            {getLabelTreshold() ? <p className="label">My ears</p> : null}
           </div>
         </div>
       </div>
