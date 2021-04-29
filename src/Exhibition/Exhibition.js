@@ -7,7 +7,11 @@ import { data } from './Player/data';
 import './Player/styles/app.scss'
 
 
-const App = () => {
+const Exhibition = () => {
+  // render exhibition from props - disable dependency data
+
+
+
   const renderResponsiveFooter = () => {
     const isMobile = utils.mobileCheck();
     if (isMobile) {
@@ -24,4 +28,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default Exhibition;

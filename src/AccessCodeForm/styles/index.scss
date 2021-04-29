@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;800&display=swap);
+
+$light-blue-background: #D1ECF1;
+$dark-blue: #092c6a;
+$font-size: 1.25rem;
+
+.access-code-form {
+  height: 100vh;
+  width: 100vw;
+  background-color: $light-blue-background;
+
+  font-family: 'Montserrat', sans-serif;
+
+  .horizontal-container {
+    height: 100%;
+    width: 90vw;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+#form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: $dark-blue;
+}
+
+#form h2 {
+  font-family: inherit;
+  font-size: $font-size;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+
+  span {
+    font-size: 24px;
+    font-weight: 800;
+  }
+}
+
+#form input.user-input {
+  font-size: $font-size;
+  color: inherit;
+  font-weight: 700;
+  text-align: center;
+
+  height: 40px;
+  border-radius: 20px;
+  margin: 2rem 0;
+  padding: 3px 20px 1px 20px;
+
+  outline: none;
+  border: none;
+}
+
+#form .submit-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  .submit-button {
+    height: 40px;
+    width: 140px;
+
+    font-family: inherit;
+    font-size: $font-size;
+    font-weight: 700;
+
+    color: white;
+    background-color: $dark-blue;
+    border: none;
+    border-radius: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    cursor: pointer;
+  }
+}

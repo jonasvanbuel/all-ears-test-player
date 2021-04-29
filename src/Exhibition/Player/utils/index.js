@@ -78,6 +78,25 @@ const utils = {
       return "00:00"
     }
   },
+  getAllIndexes: (arr, val) => {
+    var indexes = [], i = -1;
+    while ((i = arr.indexOf(val, i+1)) !== -1){
+        indexes.push(i);
+    }
+    return indexes;
+  },
+  formatAccessCode: (userInput) => {
+    const inputArray = userInput.split("");
+    // Capitalize
+    const dashIndexes = utils.getAllIndexes(inputArray, "-");
+    dashIndexes.forEach(i => {
+      const charI = i + 1;
+      inputArray[charI] = inputArray[charI].toUpperCase();
+    })
+    // Delete dashes
+    const accessCode = inputArray.join("").replaceAll("-", "");
+    return accessCode;
+  },
   disableScroll: (tagName) => {
     const body = document.getElementsByTagName(tagName)[0];
     if (!body.classList.contains('noscroll')) {
