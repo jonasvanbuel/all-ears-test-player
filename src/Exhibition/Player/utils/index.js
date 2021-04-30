@@ -94,7 +94,8 @@ const utils = {
       inputArray[charI] = inputArray[charI].toUpperCase();
     })
     // Delete dashes
-    const accessCode = inputArray.join("").replaceAll("-", "");
+    const string = inputArray.join("");
+    const accessCode = string.replaceAll("-", "")
     return accessCode;
   },
   disableScroll: (tagName) => {
