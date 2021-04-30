@@ -5,6 +5,8 @@ import './styles/index.scss'
 import exhibitions from '../data';
 import utils from '../Exhibition/Player/utils';
 
+import LogoButton from '../Exhibition/Player/subComponents/LogoButton';
+
 const AccessCodeForm = ({ setExhibition }) => {
   const [ userInput, setUserInput ] = useState('');
 
@@ -26,6 +28,7 @@ const AccessCodeForm = ({ setExhibition }) => {
   return (
     <div className="access-code-form">
       <div className="horizontal-container">
+        <LogoButton />
         <div id="form">
           <h2>Please enter your <span>access code</span> to view your demo</h2>
           <input
@@ -39,9 +42,15 @@ const AccessCodeForm = ({ setExhibition }) => {
               className="submit-button"
               onClick={e => handleClick(e)}
             >
-              showme
+              Next
             </button>
           </div>
+        </div>
+        <div className="contact-us-container">
+          <a href="mailto:team@allears.art" className="contact-us">
+            <p>Contact us to request access</p>
+            <i class="fas fa-arrow-circle-right"></i>
+          </a>
         </div>
       </div>
     </div>

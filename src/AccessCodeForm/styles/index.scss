@@ -2,7 +2,6 @@
 
 $light-blue-background: #D1ECF1;
 $dark-blue: #092c6a;
-$font-size: 1.25rem;
 
 .access-code-form {
   height: 100vh;
@@ -14,10 +13,13 @@ $font-size: 1.25rem;
   .horizontal-container {
     height: 100%;
     width: 90vw;
+    max-width: 400px;
     margin: 0 auto;
 
     display: flex;
     align-items: center;
+
+    position: relative;
   }
 }
 
@@ -26,23 +28,25 @@ $font-size: 1.25rem;
   display: flex;
   flex-direction: column;
   color: $dark-blue;
+
+  font-size: 1.1rem;
 }
 
 #form h2 {
   font-family: inherit;
-  font-size: $font-size;
+  font-size: inherit;
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
 
   span {
-    font-size: 24px;
+    font-size: 1.35rem;
     font-weight: 800;
   }
 }
 
 #form input.user-input {
-  font-size: $font-size;
+  font-size: inherit;
   color: inherit;
   font-weight: 700;
   text-align: center;
@@ -66,7 +70,7 @@ $font-size: 1.25rem;
     width: 140px;
 
     font-family: inherit;
-    font-size: $font-size;
+    font-size: inherit;
     font-weight: 700;
 
     color: white;
@@ -79,3 +83,80 @@ $font-size: 1.25rem;
     cursor: pointer;
   }
 }
+
+.access-code-form .contact-us-container {
+    position: absolute;
+    bottom: 1.5rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+
+    .contact-us {
+      display: flex;
+
+      color: $dark-blue;
+      opacity: 0.8;
+      font-size: 0.9rem;
+      font-weight: 400;
+
+      text-decoration: none;
+      cursor: pointer;
+
+      .fas {
+        margin-left: 0.5rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .contact-us:hover {
+      opacity: 1;
+    }
+}
+
+
+// RESPONSIVE TEMPLATE
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-height: 700px) {
+  #form {
+    font-size: 1.25rem;
+  }
+
+  #form h2 span {
+    font-size: 1.5rem;
+  }
+
+  .contact-us {
+    font-size: 1rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
