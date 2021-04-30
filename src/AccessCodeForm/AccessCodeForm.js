@@ -27,8 +27,8 @@ const AccessCodeForm = ({ setExhibition }) => {
 
   return (
     <div className="access-code-form">
+      <LogoButton />
       <div className="horizontal-container">
-        <LogoButton />
         <div id="form">
           <h2>Please enter your <span>access code</span> to view your demo</h2>
           <input

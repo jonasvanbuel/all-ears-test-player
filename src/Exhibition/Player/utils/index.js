@@ -95,7 +95,7 @@ const utils = {
     })
     // Delete dashes
     const string = inputArray.join("");
-    const accessCode = string.replaceAll("-", "")
+    const accessCode = string.replace(/-/g, "")
     return accessCode;
   },
   disableScroll: (tagName) => {
