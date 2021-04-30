@@ -17,8 +17,8 @@ import './styles/player.scss'
 SwiperCore.use([Navigation, Pagination]);
 
 
-const Player = () => {
-  const { chapters } = usePlayer();
+const Player = ({ exhibition }) => {
+  const { chapters } = usePlayer(exhibition);
 
   // TODO Switch between render ChapterMobile or ChapterDesktop
   const renderChapterMobile = (chapter) => {

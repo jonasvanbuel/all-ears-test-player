@@ -10,11 +10,12 @@ const AccessCodeForm = ({ setExhibition }) => {
 
   const handleClick = e => {
     e.preventDefault();
-    const inputKey = utils.formatAccessCode(userInput);
+    const accessCode = utils.formatAccessCode(userInput);
+
     // 1. Validate accessCode
-    if (exhibitions[inputKey]) {
+    if (exhibitions[accessCode]) {
       // 2. If accessCode is found -> setExhibition
-      setExhibition(exhibitions[inputKey])
+      setExhibition(exhibitions[accessCode])
     } else {
       // 3. TODO: if accessCode is NOT found -> add message...
 

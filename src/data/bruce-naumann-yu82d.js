@@ -1,7 +1,7 @@
 export const bruceNaumannYu82d = {
-  exhibition: {
-    accessCode: 'bruce-naumann-yu82d',
+  details: {
     id: 1,
+    accessCode: 'bruce-naumann-yu82d',
     mainTitle: 'Bruce Nauman',
     subTitle: 'Retrospective',
     location: 'Tate Modern, London',

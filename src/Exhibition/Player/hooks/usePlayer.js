@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { data } from '../data';
 
 import utils from '../utils'
 
-function usePlayer() {
-  const [exhibition, setExhibition] = useState(data.exhibition);
-  const [chapters, setChapters] = useState(data.chapters);
+function usePlayer(exhibition) {
+
+  const [details] = useState(exhibition.details);
+  const [chapters] = useState(exhibition.chapters);
 
   // API call
 
@@ -20,7 +20,7 @@ function usePlayer() {
   }, [])
 
   return {
-    exhibition,
+    details,
     chapters
   }
 }

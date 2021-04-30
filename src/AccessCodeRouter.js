@@ -5,8 +5,6 @@ import AccessCodeForm from './AccessCodeForm/AccessCodeForm';
 
 const AccessCodeRouter = () => {
   const [ exhibition, setExhibition ] = useState(null);
-  // const [ exhibition, setExhibition ] = useState('bruce-naumann-yu82d');
-
 
   const renderAccessCodeForm = () => {
     return <AccessCodeForm setExhibition={setExhibition} />

@@ -1,10 +1,11 @@
-export const data = {
-  exhibition: {
-    id: 1,
-    mainTitle: 'Bruce Nauman',
+export const claudiaSchifferM57tu = {
+  details: {
+    id: 2,
+    accessCode: 'claudia-schiffer-m57tu',
+    mainTitle: 'Claudia Schiffer',
     subTitle: 'Retrospective',
-    location: 'Tate Modern, London',
-    locationUrl: 'https://www.tate.org.uk/whats-on/tate-modern/exhibition/bruce-nauman',
+    location: 'Museum Kunstpalast, Düsseldorf',
+    locationUrl: '',
     dates: {
       from: '7 October',
       to: '21 February 2021'
@@ -15,7 +16,7 @@ export const data = {
       id: 1,
       chapterNumber: 1,
       roomNumber: 2,
-      title: 'Early Work',
+      title: 'Claudia Schiffer room 1',
       imgSources: {
         mobile: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782536/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-01-mobile_jmrkcm.jpg',
         desktop: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782537/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-01-desktop_dlawwk.jpg'
@@ -35,7 +36,7 @@ export const data = {
       id: 2,
       chapterNumber: 2,
       roomNumber: 5,
-      title: 'Double Steel Cage Piece, 1974',
+      title: 'Claudia Schiffer room 2',
       imgSources: {
         mobile: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782537/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-02-mobile_ntqkcm.jpg',
         desktop: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782537/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-02-desktop_ke9isc.jpg'
@@ -55,7 +56,7 @@ export const data = {
       id: 3,
       chapterNumber: 3,
       roomNumber: 6,
-      title: 'Musical Chairs, 1983',
+      title: 'Claudia Schiffer room 3',
       imgSources: {
         mobile: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782537/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-03-mobile_l43g3j.jpg',
         desktop: 'https://res.cloudinary.com/deo4sjfc8/image/upload/v1616782536/2021-all-ears-test-player/images/2021-Bruce-Nauman-chapter-03-desktop_jdfjiw.jpg'
