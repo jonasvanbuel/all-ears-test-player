@@ -1,5 +1,5 @@
 import useProgressCircle from '../hooks/useProgressCircle';
-import utils from '../utils';
+import utils from '../../../utils';
 
 import '../styles/progress-circle.scss';
 

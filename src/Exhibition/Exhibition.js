@@ -1,7 +1,7 @@
 import Player from './Player/Player';
 import Header from './Player/subComponents/Header';
 import FooterMobile from './Player/subComponents/FooterMobile';
-import utils from './Player/utils';
+import utils from '../utils';
 
 import './Player/styles/app.scss'
 

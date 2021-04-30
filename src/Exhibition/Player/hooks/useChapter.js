@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import utils from '../utils';
+import utils from '../../../utils';
 
 function useChapter(chapter) {
   const [playing, setPlaying] = useState(false);

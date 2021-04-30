@@ -5,7 +5,7 @@ import usePlayer from './hooks/usePlayer';
 import ChapterMobile from './subComponents/ChapterMobile';
 import ChapterDesktop from './subComponents/ChapterDesktop';
 
-import utils from './utils';
+import utils from '../../utils';
 
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';

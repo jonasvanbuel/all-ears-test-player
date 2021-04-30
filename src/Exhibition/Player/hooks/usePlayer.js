@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import utils from '../utils'
+import utils from '../../../utils';
 
 function usePlayer(exhibition) {
 

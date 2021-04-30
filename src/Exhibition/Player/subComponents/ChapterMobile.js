@@ -1,5 +1,5 @@
 import useChapter from '../hooks/useChapter';
-import utils from '../utils';
+import utils from '../../../utils';
 
 import Audio from './Audio';
 import Play from './Play';

@@ -1,5 +1,5 @@
 import logoButton from'../assets/logo-button-1000.png'
-import '../styles/logo-button.scss';
+import './styles/logo-button.scss';
 
 const LogoButton = () => {
   return (

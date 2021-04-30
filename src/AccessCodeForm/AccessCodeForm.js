@@ -3,9 +3,9 @@ import { useState } from 'react';
 import './styles/index.scss'
 
 import exhibitions from '../data';
-import utils from '../Exhibition/Player/utils';
+import utils from '../utils';
 
-import LogoButton from '../Exhibition/Player/subComponents/LogoButton';
+import LogoButton from '../subComponents/LogoButton';
 
 const AccessCodeForm = ({ setExhibition }) => {
   const [ userInput, setUserInput ] = useState('');

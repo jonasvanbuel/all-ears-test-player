@@ -1,5 +1,5 @@
-import utils from '../utils';
-import LogoButton from './LogoButton';
+import utils from '../../../utils';
+import LogoButton from '../../../subComponents/LogoButton';
 import '../styles/header.scss';
 
 const Header = ({ exhibition }) => {
